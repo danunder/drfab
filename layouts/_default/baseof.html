@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}DrFab — Custom 3D Printing & Packaging | Ontario{{ else }}{{ .Title }} | DrFab{{ end }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body class="bg-bg-light text-bg-dark antialiased">
   {{ partial "nav.html" . }}
