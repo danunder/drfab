@@ -1,0 +1,28 @@
+baseURL: 'https://drfab.ca/'
+title: 'DrFab'
+locale: 'en-CA'
+enableEmoji: true
+enableRobotsTXT: true
+
+params:
+  description: "Custom 3D modelling, 3D printing, and vacform packaging for small businesses in Ontario. No minimums. From concept to shelf-ready product."
+  email: "hello@drfab.ca"
+  instagram: "https://instagram.com/drfab.ca"
+
+menu:
+  main:
+    - name: Services
+      url: "#services"
+      weight: 10
+    - name: How It Works
+      url: "#process"
+      weight: 20
+    - name: Work
+      url: "#work"
+      weight: 30
+    - name: Pricing
+      url: "#pricing"
+      weight: 40
+    - name: Contact
+      url: "#contact"
+      weight: 50

@@ -1,0 +1,11 @@
+<footer class="bg-bg-dark py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/50 text-sm">
+      &copy; {{ now.Year }} DrFab. A partnership of Dan &amp; Ryan in Ontario, Canada.
+    </p>
+    <div class="mt-4 flex justify-center gap-6">
+      <a href="mailto:{{ .Site.Params.email }}" class="text-white/50 hover:text-accent transition-colors text-sm">{{ .Site.Params.email }}</a>
+      <a href="{{ .Site.Params.instagram }}" target="_blank" rel="noopener" class="text-white/50 hover:text-accent transition-colors text-sm">Instagram</a>
+    </div>
+  </div>
+</footer>

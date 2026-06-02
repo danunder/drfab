@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="pt-24 pb-16 max-w-6xl mx-auto px-4">
+  <h1 class="text-3xl font-bold mb-8">{{ .Title }}</h1>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {{ range .Pages }}
+    <div class="p-6 rounded-xl bg-white/5 border border-white/10">
+      <h2 class="font-semibold text-lg mb-2"><a href="{{ .RelPermalink }}" class="hover:text-accent">{{ .Title }}</a></h2>
+      <p class="text-white/60 text-sm">{{ .Params.summary }}</p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,206 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+  <div class="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/4 -right-32 w-80 h-80 bg-secondary/15 rounded-full blur-3xl"></div>
+  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+    <img src="/media/banners/DrFab.png" alt="DrFab" class="mx-auto w-96 md:w-[32rem] lg:w-[40rem] mb-8 drop-shadow-2xl">
+    <p class="text-2xl md:text-4xl font-bold mb-4">From Concept to Product. No Minimums.</p>
+    <p class="text-lg md:text-xl text-bg-dark/60 mb-10">Custom 3D printing, modelling, and packaging for Ontario's makers, creators, and small businesses.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#contact" class="px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/80 transition-all shadow-lg shadow-primary/25">Get a Free Quote</a>
+      <a href="#work" class="px-8 py-4 bg-bg-dark/5 border border-bg-dark/20 font-semibold rounded-lg hover:bg-bg-dark/10 transition-all">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (primary band) -->
+<section id="services" class="py-24 bg-primary text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">One shop. Whole chain.</h2>
+    <p class="text-white/80 text-center max-w-2xl mx-auto mb-16">DrFab takes your idea from sketch to shelf-ready product &mdash; all under one roof. No minimum orders. No weeks of back-and-forth between vendors.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="p-6 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-colors">
+        <h3 class="text-lg font-semibold text-accent mb-3">3D Modelling</h3>
+        <p class="text-white/80 text-sm">Professional CAD and sculpting. We turn your napkin sketch, photo, or description into a production-ready 3D model.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-colors">
+        <h3 class="text-lg font-semibold text-accent mb-3">3D Printing</h3>
+        <p class="text-white/80 text-sm">FDM and resin printing for prototypes, end-use parts, and everything in between. Multiple materials for any application.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-colors">
+        <h3 class="text-lg font-semibold text-accent mb-3">Custom Packaging</h3>
+        <p class="text-white/80 text-sm">Blister packs, clamshells, and trays &mdash; vacformed from 3D-printed molds. Retail-quality packaging in quantities of 1 to 500.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-colors">
+        <h3 class="text-lg font-semibold text-accent mb-3">Full-Service</h3>
+        <p class="text-white/80 text-sm">Model &rarr; Print &rarr; Package &rarr; Done. One quote, one timeline, one point of contact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE HELP (light) -->
+<section class="py-24">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Built for small runs and big ideas</h2>
+    <div class="space-y-4">
+      {{ $clients := slice
+        (dict "who" "Startup or inventor" "what" "Prototype your product and create investor-ready samples")
+        (dict "who" "Indie toy or game creator" "what" "Model, print, and blister-package your creations")
+        (dict "who" "Small brand" "what" "Get retail-ready packaging without a 5,000-unit minimum")
+        (dict "who" "Agency or marketing team" "what" "Create physical mockups and presentation pieces fast")
+        (dict "who" "Manufacturer" "what" "Replace broken parts, make custom jigs and fixtures")
+        (dict "who" "Anyone with an idea" "what" "Make the thing that doesn't exist yet")
+      }}
+      {{ range $clients }}
+      <div class="flex flex-col sm:flex-row gap-2 sm:gap-6 p-4 rounded-lg bg-surface-light border border-bg-dark/10">
+        <span class="font-semibold text-secondary shrink-0 sm:w-56">{{ .who }}</span>
+        <span class="text-bg-dark/70">{{ .what }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS (primary band) -->
+<section id="process" class="py-24 bg-primary text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Three steps to real.</h2>
+    <div class="space-y-12">
+      <div class="flex gap-6">
+        <div class="shrink-0 w-12 h-12 rounded-full bg-white/20 border border-white/30 flex items-center justify-center font-bold">1</div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Tell us what you need</h3>
+          <p class="text-white/80">Send us a sketch, a photo, a file, or just a description. We'll scope it out and send you a clear quote within 48 hours.</p>
+        </div>
+      </div>
+      <div class="flex gap-6">
+        <div class="shrink-0 w-12 h-12 rounded-full bg-white/20 border border-white/30 flex items-center justify-center font-bold">2</div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">We design and build</h3>
+          <p class="text-white/80">Ryan models it. Dan prints, forms, and finishes it. You approve the design before we go to production. No surprises.</p>
+        </div>
+      </div>
+      <div class="flex gap-6">
+        <div class="shrink-0 w-12 h-12 rounded-full bg-white/20 border border-white/30 flex items-center justify-center font-bold">3</div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Pick up or we ship</h3>
+          <p class="text-white/80">Local pickup or shipped anywhere in Ontario. Your project, in your hands.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / PORTFOLIO (light) -->
+<section id="work" class="py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Recent Work</h2>
+    <p class="text-bg-dark/60 text-center mb-16">A selection of recent projects</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range where .Site.RegularPages "Section" "projects" }}
+      <div class="p-6 rounded-xl bg-surface-light border border-bg-dark/10 hover:border-primary/50 transition-colors group">
+        <h3 class="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{{ .Title }}</h3>
+        <p class="text-bg-dark/60 text-sm mb-4">{{ .Params.summary }}</p>
+        {{ with .Params.tags }}
+        <div class="flex flex-wrap gap-2">
+          {{ range . }}
+          <span class="text-xs px-2 py-1 rounded bg-primary/10 text-primary font-medium">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT (primary band) -->
+<section id="about" class="py-24 bg-primary text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Who's behind DrFab</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="text-xl font-semibold text-accent mb-3">Dan &mdash; Operations &amp; Fabrication</h3>
+        <p class="text-white/80">Materials scientist and developer with years of 3D printing experience. Runs production, handles materials selection, builds tooling, and operates the vacform line. If it needs to be made, Dan figures out how.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-accent mb-3">Ryan &mdash; Design &amp; Modelling</h3>
+        <p class="text-white/80">Senior 3D modeller with professional experience in toy design and packaging. Creates production-ready models from any starting point &mdash; a sketch, a scan, a photo, or just a conversation. If it needs to look right, Ryan makes it happen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING (light) -->
+<section id="pricing" class="py-24">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Transparent pricing</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b border-bg-dark/10">
+            <th class="pb-4 font-semibold">Service</th>
+            <th class="pb-4 font-semibold text-right">Starting at</th>
+          </tr>
+        </thead>
+        <tbody class="text-bg-dark/70">
+          <tr class="border-b border-bg-dark/5"><td class="py-4">3D print (you provide the file)</td><td class="py-4 text-right text-primary font-semibold">$50</td></tr>
+          <tr class="border-b border-bg-dark/5"><td class="py-4">3D modelling + print</td><td class="py-4 text-right text-primary font-semibold">$250</td></tr>
+          <tr class="border-b border-bg-dark/5"><td class="py-4">Custom blister packaging (per design)</td><td class="py-4 text-right text-primary font-semibold">$300</td></tr>
+          <tr class="border-b border-bg-dark/5"><td class="py-4">Full-service: model + print + package</td><td class="py-4 text-right text-primary font-semibold">$1,000</td></tr>
+          <tr><td class="py-4">Consultation</td><td class="py-4 text-right text-primary font-semibold">$100/hr</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-bg-dark/50 text-sm text-center mt-8">Every project is different. Send us the details and we'll quote it properly &mdash; no charge, no obligation.</p>
+  </div>
+</section>
+
+<!-- FAQ (primary band) -->
+<section class="py-24 bg-primary text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Questions</h2>
+    <div class="space-y-6">
+      {{ $faqs := slice
+        (dict "q" "What file formats do you accept?" "a" "STL, OBJ, STEP, 3MF, or native files from Blender, ZBrush, Fusion 360, SolidWorks, etc. Not sure? Send it over and we'll figure it out.")
+        (dict "q" "I don't have a 3D model. Can you still help?" "a" "Absolutely. Send a sketch, a photo, measurements, or just describe what you need. Modelling is one of our core services.")
+        (dict "q" "What materials can you print in?" "a" "PLA, PETG, ABS, ASA, TPU, Nylon, and more (FDM). Standard, tough, flexible, and castable resins. We'll recommend the right material for your application.")
+        (dict "q" "How fast can you turn things around?" "a" "Standard turnaround is 1&ndash;2 weeks depending on complexity. Rush service available for an additional fee.")
+        (dict "q" "What's the minimum order?" "a" "One. Literally one. That's the whole point.")
+        (dict "q" "Do you ship?" "a" "Yes &mdash; anywhere in Ontario (and beyond). Local pickup is also free.")
+        (dict "q" "Is there a setup fee for packaging?" "a" "The first blister mold is included in the quote. If you need additional sizes or designs, each mold is quoted separately. Once the mold exists, per-unit costs are low.")
+        (dict "q" "Can I get a sample before committing to a run?" "a" "Yes. We always recommend approving a sample before production runs. It's built into our process.")
+      }}
+      {{ range $faqs }}
+      <details class="group p-4 rounded-lg bg-white/10 border border-white/20">
+        <summary class="cursor-pointer font-semibold group-open:text-accent transition-colors list-none flex items-center justify-between">
+          {{ .q }}
+          <span class="text-white/40 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <p class="mt-3 text-white/80 text-sm">{{ .a }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT (light) -->
+<section id="contact" class="py-24">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's make something</h2>
+    <p class="text-bg-dark/60 mb-10">Tell us about your project. We'll get back to you within 24 hours with questions or a quote.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-6">
+      <a href="mailto:{{ .Site.Params.email }}" class="px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/80 transition-all shadow-lg shadow-primary/25">
+        Email Us
+      </a>
+      <a href="{{ .Site.Params.instagram }}" target="_blank" rel="noopener" class="px-8 py-4 bg-bg-dark/5 border border-bg-dark/20 font-semibold rounded-lg hover:bg-bg-dark/10 transition-all">
+        Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+{{ end }}
