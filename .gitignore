@@ -27,6 +27,7 @@ hugo_stats.json
 
 # Dependencies
 node_modules/
+package-lock.json
 
 # ============================================================================
 # Environment & Configuration
