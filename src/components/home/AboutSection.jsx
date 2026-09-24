@@ -1,5 +1,5 @@
-import { Check, PhoneCall } from "lucide-react";
-import hero1 from "../../assets/images/hero1.png";
+import { Check, Mail } from "lucide-react";
+import hero1 from "../../assets/images/hero1.jpeg";
 import hero2 from "../../assets/images/hero2.png";
 
 /**
@@ -16,14 +16,18 @@ export default function AboutSection() {
           {/* Main image placeholder */}
           <div className="relative overflow-hidden rounded-3xl bg-gray-200">
             {/* Replace this div with your <img /> later */}
-            <img src={hero2} className="h-105 w-full sm:h-120 object-cover" />
+            <img
+              src={hero2}
+              alt="drfab workshop"
+              className="h-105 w-full sm:h-120 object-cover"
+            />
           </div>
 
-          {/* Experience badge */}
+          {/* Experience badge
           <div className="absolute left-0 top-24 -translate-x-6 rounded-2xl bg-[#1F2A30] px-8 py-8 text-white shadow-lg sm:-translate-x-10">
             <div className="text-5xl font-extrabold leading-none">25+</div>
             <div className="mt-4 text-sm font-semibold">Year of experience</div>
-          </div>
+          </div> */}
 
           {/* Small bottom image placeholder */}
           <div className="absolute bottom-10 right-6 w-60 overflow-hidden rounded-2xl border-8 border-white bg-gray-200 shadow-lg sm:right-10 sm:w-70">
@@ -39,50 +43,47 @@ export default function AboutSection() {
           </div>
 
           <p className="text-sm font-semibold tracking-[0.22em] text-[#1F2A30]">
-            MORE ABOUT US
+            WHAT WE DO
           </p>
 
           <h2 className="mt-4 text-3xl font-extrabold leading-[1.1] text-[#1F2A30] sm:text-4xl">
-            Empowering You to Feel
+            Prototyping
             <br className="hidden sm:block" />
-            Your Best Every Day
+            to Production
           </h2>
 
           <div className="mt-6 grid lg:grid-cols-[1.25fr_0.75fr]">
             {/* Paragraph */}
-            <p className="text-[15px] leading-7 text-[#5C6B73]">
-              Porttitor ornare fermentum aliquam pharetra ut facilisis gravida
-              risus suscipit. dui feugiat fusce conubia ridiculus tristique
-              parturient natoque vulputate risu.
+            <p className="text-[15px] leading-7 text-[#5C6B73] pr-6">
+              drfab takes your idea from sketch to shelf-ready product — all
+              under one roof. No weeks of back-and-forth
+              between vendors.
             </p>
 
             {/* Checklist */}
             <ul className="space-y-3">
-              <CheckItem text="24/7 Call Services Avilable" />
-              <CheckItem text="Great Skilled Consultant" />
-              <CheckItem text="Expert Team Members" />
+              <CheckItem text="No Minimum Orders" />
+              <CheckItem text="One Point of Contact" />
+              <CheckItem text="Model, Print & Package In-House" />
             </ul>
           </div>
 
           {/* Bottom row */}
           <div className="mt-10 flex flex-col gap-6 border-t border-black/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-            {/* Call box */}
+            {/* Email box */}
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1F2A30] text-white">
-                <PhoneCall />
+                <Mail />
               </div>
               <div>
-                <p className="text-sm text-[#5C6B73]">Call us anytime</p>
+                <p className="text-sm text-[#5C6B73]">Email us anytime</p>
                 <p className="text-lg font-extrabold text-[#1F2A30]">
-                  +256 56778.5678
+                  hello@drfab.biz
                 </p>
               </div>
             </div>
 
-            {/* Signature placeholder */}
-            <div className="text-3xl font-semibold italic text-[#1F2A30]/80">
-              Jonathon Doe
-            </div>
+            
           </div>
         </div>
       </div>

@@ -1,6 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import CarouselDots from "../ui/CarouselDots";
 import ServiceCard from "./ServiceCard";
+import icon1 from "../../assets/icons/1.png";
+import icon2 from "../../assets/icons/2.png";
+import icon3 from "../../assets/icons/3.png";
+import icon4 from "../../assets/icons/4.png";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 
 /**
  * ServicesSection
@@ -13,20 +19,24 @@ export default function ServicesSection() {
   const services = useMemo(
     () => [
       {
-        title: "Business Planning",
-        desc: "Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero",
+        title: "3D Modelling",
+        desc: "Professional CAD and sculpting. We turn your napkin sketch, photo, or description into a production-ready 3D model.",
+        icon: icon1,
       },
       {
-        title: "Process Development",
-        desc: "Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero",
+        title: "3D Printing",
+        desc: "FDM and resin printing for prototypes, end-use parts, and everything in between. Multiple materials for any application.",
+        icon: icon2,
       },
       {
-        title: "Strategy & Planning",
-        desc: "Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero",
+        title: "Print Finishing",
+        desc: "High-quality print finishing - sanding, assembly, priming & painting - for your prototypes and products, ensuring a professional look and feel.",
+        icon: icon3,
       },
       {
-        title: "Business Goal",
-        desc: "Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero",
+       title: "Custom Packaging",
+        desc: "Blister packs, clamshells, and trays — vacformed from 3D-printed molds. Retail-quality packaging in quantities of 1 to 500.",
+        icon: icon4,
       },
     ],
     [],
@@ -40,15 +50,21 @@ export default function ServicesSection() {
 
   const scrollerRef = useRef(null);
   const itemRefs = useRef([]);
+  const isFirstRender = useRef(true);
 
-  // Scroll to the active card (one-card step behavior)
+  // Scroll to the active card (one-card step behavior), skipping the initial
+  // mount so this never hijacks the page's vertical scroll on load
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
     const el = itemRefs.current[activeDot];
-    if (!el) return;
-    el.scrollIntoView({
+    if (!el || !scrollerRef.current) return;
+    scrollerRef.current.scrollTo({
+      left: el.offsetLeft,
       behavior: "smooth",
-      inline: "start",
-      block: "nearest",
     });
   }, [activeDot]);
 
@@ -62,10 +78,10 @@ export default function ServicesSection() {
           </div>
 
           <p className="text-sm font-semibold tracking-[0.25em] text-[#1F2A30]">
-            OUR SERVICE
+            OUR SERVICES
           </p>
           <h2 className="mt-4 text-4xl font-extrabold text-[#1F2A30] sm:text-5xl">
-            High Quality Services
+            One Shop. Whole Chain.
           </h2>
         </div>
 
@@ -106,6 +122,7 @@ export default function ServicesSection() {
                         title={item.title}
                         desc={item.desc}
                         active={isActive}
+                        icon={item.icon}
                       />
                     </div>
                   );
@@ -121,6 +138,44 @@ export default function ServicesSection() {
                 onChange={setActiveDot}
               />
             </div>
+            {/* Prev / Next */}
+        <button
+          type="button"
+          aria-label="Previous slide"
+          onClick={() => activeDot > 0 && setActiveDot(activeDot - 1)}
+          className="nes-btn absolute left-6 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center text-[#1F2A30] shadow md:flex "
+        >
+          <ChevronLeft />
+        </button>
+
+        <button
+          type="button"
+          aria-label="Next slide"
+          onClick={() => activeDot < DOTS - 1 && setActiveDot(activeDot + 1)}
+          className="nes-btn absolute right-6 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center text-[#1F2A30] shadow md:flex"
+        >
+          <ChevronRight />
+        </button>
+
+        {/* Mobile controls */}
+        <div className="absolute bottom-6 left-0 right-0 z-20 flex items-center justify-center gap-3 md:hidden">
+          <button
+            type="button"
+              onClick={() => activeDot > 0 && setActiveDot(activeDot - 1)}
+            className="nes-btn h-11 w-11 text-[#1F2A30]"
+            aria-label="Previous slide (mobile)"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveDot(activeDot + 1)}
+            className="nes-btn h-11 w-11 text-[#1F2A30]"
+            aria-label="Next slide (mobile)"
+          >
+            ›
+          </button>
+        </div>
           </div>
         </div>
       </div>

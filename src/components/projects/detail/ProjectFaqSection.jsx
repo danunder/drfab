@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import heroImg from "../../../assets/images/hero3.png";
+import { Link } from "react-router-dom";
+import heroImg from "../../../assets/images/hero3.jpeg";
 
 export default function ProjectFaqSection({ faqs = [] }) {
   const data = useMemo(() => {
@@ -38,6 +39,7 @@ export default function ProjectFaqSection({ faqs = [] }) {
               <button
                 type="button"
                 onClick={() => setOpenIdx(open ? -1 : idx)}
+                aria-expanded={open}
                 className="flex w-full items-center justify-between px-8 py-6 text-left"
               >
                 <span className="text-[18px] font-extrabold text-[#1F2A30]">
@@ -83,9 +85,12 @@ export default function ProjectFaqSection({ faqs = [] }) {
                           {contentText}
                         </p>
 
-                        <button className="mt-8 rounded-2xl bg-[#1F2A30] px-8 py-4 text-sm font-semibold text-white shadow-sm transition hover:bg-black">
+                        <Link
+                          to="/#get-in-touch"
+                          className="nes-btn is-primary mt-8 inline-block rounded-2xl bg-[#1F2A30] px-8 py-4 text-sm font-semibold text-white shadow-sm transition hover:bg-black"
+                        >
                           Get A Free Quote
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

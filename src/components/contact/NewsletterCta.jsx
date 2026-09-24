@@ -27,14 +27,20 @@ export default function NewsletterCta() {
             className="flex w-full items-center justify-start lg:justify-end"
           >
             <div className="flex w-full max-w-[520px] items-center gap-3 rounded-xl bg-[#1F2A30] p-2 shadow-sm">
+              <label htmlFor="newsletter-email" className="sr-only">
+                Email Address
+              </label>
               <input
+                id="newsletter-email"
+                name="email"
                 type="email"
+                autoComplete="email"
                 placeholder="Enter Email Address"
                 className="h-12 w-full bg-transparent px-4 text-sm text-white placeholder:text-white/50 outline-none"
               />
               <button
                 type="submit"
-                className="h-12 whitespace-nowrap rounded-lg bg-white px-6 text-sm font-semibold text-[#1F2A30]"
+                className="nes-btn h-12 whitespace-nowrap rounded-lg bg-white px-6 text-sm font-semibold text-[#1F2A30]"
               >
                 Subscribe Now
               </button>

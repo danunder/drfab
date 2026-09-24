@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import CarouselDots from "../ui/CarouselDots";
 import ProjectCard from "./ProjectCard";
-import image from "../../assets/images/hero1.png";
+import image from "../../assets/images/hero1.jpeg";
 
 /**
  * ProjectsSection (Popular Projects)
@@ -14,27 +14,27 @@ export default function ProjectsSection() {
   const projects = useMemo(
     () => [
       {
-        slug: "business-growth",
-        title: "Business Growth",
-        category: "Business Strategy",
+        slug: "custom-toy-prototype",
+        title: "Custom Toy Prototype",
+        category: "Modelled, Printed & Blister-Packaged",
         image: image,
       },
       {
-        slug: "startup-solution",
-        title: "Startup Solution",
-        category: "Business Strategy",
+        slug: "replacement-parts",
+        title: "Replacement Parts",
+        category: "For Vintage Equipment",
         image: image,
       },
       {
-        slug: "market-research",
-        title: "Market Research",
-        category: "Business Strategy",
+        slug: "product-mockup",
+        title: "Product Mockup",
+        category: "For Agency Pitch",
         image: image,
       },
       {
-        slug: "product-launch",
-        title: "Product Launch",
-        category: "Business Strategy",
+        slug: "small-batch-packaging",
+        title: "Small-Batch Packaging Run",
+        category: "50 Units",
         image: image,
       },
     ],
@@ -44,16 +44,23 @@ export default function ProjectsSection() {
   const DOTS = 3;
   const [activeDot, setActiveDot] = useState(0);
 
+  const scrollerRef = useRef(null);
   const itemRefs = useRef([]);
+  const isFirstRender = useRef(true);
 
-  // Smoothly scroll to the selected item (one-card movement)
+  // Smoothly scroll to the selected item (one-card movement), skipping the
+  // initial mount so this never hijacks the page's vertical scroll on load
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
     const el = itemRefs.current[activeDot];
-    if (!el) return;
-    el.scrollIntoView({
+    if (!el || !scrollerRef.current) return;
+    scrollerRef.current.scrollTo({
+      left: el.offsetLeft,
       behavior: "smooth",
-      inline: "start",
-      block: "nearest",
     });
   }, [activeDot]);
 
@@ -69,11 +76,11 @@ export default function ProjectsSection() {
             </div>
 
             <p className="text-sm font-semibold tracking-[0.25em] text-[#1F2A30]">
-              POPULAR PROJECTS
+              RECENT WORK
             </p>
 
             <h2 className="mt-4 text-4xl font-extrabold text-[#1F2A30] sm:text-5xl">
-              Projects Our Completed Projects
+              Recent Work
             </h2>
           </div>
 
@@ -97,7 +104,10 @@ export default function ProjectsSection() {
           </div>
 
           {/* Carousel */}
-          <div className="relative no-scrollbar overflow-x-auto scroll-smooth">
+          <div
+            ref={scrollerRef}
+            className="relative no-scrollbar overflow-x-auto scroll-smooth"
+          >
             <div className="flex snap-x snap-mandatory gap-8 lg:gap-10">
               {projects.map((p, i) => (
                 <div

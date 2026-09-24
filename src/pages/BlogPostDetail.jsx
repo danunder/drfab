@@ -1,9 +1,10 @@
 import BlogDetailHero from "../components/BlogDetail/BlogDetailHero";
 import BlogDetailArticle from "../components/BlogDetail/BlogDetailArticle";
 
-import heroImg from "../assets/images/hero3.png"; // replace with your banner image
+import heroImg from "../assets/images/hero3.jpeg"; // replace with your banner image
 import NewsletterCta from "../components/contact/NewsletterCta";
 import FooterDarkSimple from "../components/contact/FooterDarkSimple";
+import useDocumentMeta from "../hooks/useDocumentMeta";
 
 export default function BlogPostDetail() {
   const demoPost = {
@@ -12,6 +13,11 @@ export default function BlogPostDetail() {
     date: "15 Jan, 2023",
     category: "Business Solution",
   };
+
+  useDocumentMeta({
+    title: demoPost.title,
+    description: `${demoPost.title} — by ${demoPost.author}, ${demoPost.category}.`,
+  });
 
   return (
     <main className="bg-white">

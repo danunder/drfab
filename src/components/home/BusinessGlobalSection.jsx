@@ -2,6 +2,7 @@ import image1 from "../../assets/images/cover.jpg";
 import image2 from "../../assets/images/hero2.png";
 import icon from "../../assets/icons/developing.png";
 import { Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
 /**
  * BusinessGlobalSection
@@ -20,40 +21,44 @@ export default function BusinessGlobalSection() {
         {/* LEFT */}
         <div className="relative">
           <p className="text-sm font-semibold tracking-[0.22em] text-[#1F2A30]">
-            JUST A CONSULTANCY
+            HOW IT WORKS
           </p>
 
           <h2 className="mt-4 text-4xl font-semibold leading-[1.08] text-[#1F2A30] sm:text-5xl">
-            We know how to manage
+            Three steps
             <br className="hidden sm:block" />
-            business globally
+            to real.
           </h2>
 
           {/* Features */}
           <div className="mt-10 space-y-8">
             <FeatureRow
-              title="Best Business Consulting"
-              desc="Fusce condimentum mattis placerat odio donec lacus porta torquent, mauris gravida rutrum"
+              title="1. Tell us what you need"
+              desc="Send us a sketch, a photo, a file, or just a description. We'll scope it out and send you a clear quote within 48 hours."
             />
             <FeatureRow
-              title="24/7 Customer Support"
-              desc="Fusce condimentum mattis placerat odio donec lacus porta torquent, mauris gravida rutrum"
+              title="2. We design and build"
+              desc="Ryan models it. Dan prints, forms, and finishes it. You approve the design before we go to production. No surprises."
+            />
+            <FeatureRow
+              title="3. Pick up or we ship"
+              desc="Local pickup in Ontario or shipped anywhere in the province. Your project, in your hands."
             />
           </div>
 
           {/* Buttons */}
           <div className="mt-12 flex items-center gap-6">
-            <button
-              type="button"
-              className="h-14 rounded-2xl bg-[#1F2A30] px-10 text-sm font-semibold text-white hover:bg-black/85"
+            <Link
+              to="/#get-in-touch"
+              className="nes-btn is-primary h-14 px-10 py-4 text-sm font-semibold text-white"
             >
-              Contact Us
-            </button>
+              Start Your Project
+            </Link>
 
             <button
               type="button"
               aria-label="Play video"
-              className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-black/5 text-[#1F2A30] hover:bg-black/10"
+              className="nes-btn inline-flex h-14 w-14 items-center justify-center text-[#1F2A30]"
             >
               <Play size={30} color="#000000" />
             </button>
@@ -75,7 +80,11 @@ export default function BusinessGlobalSection() {
           {/* Small overlapping image placeholder */}
           <div className="absolute left-10 top-50 lg:-left-30 lg:top-24 w-65 overflow-hidden rounded-3xl border-10 border-white bg-gray-200 shadow-lg sm:w-75">
             {/* Replace with your image */}
-            <img src={image2} className="h-80 w-full sm:h-90 object-cover" />
+            <img
+              src={image2}
+              alt=""
+              className="h-80 w-full sm:h-90 object-cover"
+            />
           </div>
         </div>
       </div>

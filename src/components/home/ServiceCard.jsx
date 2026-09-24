@@ -1,14 +1,10 @@
-import icon1 from "../../assets/icons/developing.png";
-import icon2 from "../../assets/icons/growth.png";
-import icon3 from "../../assets/icons/planning.png";
-import icon4 from "../../assets/icons/startegy.png";
 
 /**
  * ServiceCard
  * - active: white bg + shadow + dark arrow button
  * - inactive: transparent
  */
-export default function ServiceCard({ title, desc, active }) {
+export default function ServiceCard({ title, desc, icon, active }) {
   return (
     <div
       className={[
@@ -21,7 +17,7 @@ export default function ServiceCard({ title, desc, active }) {
       <div className="flex items-start gap-6">
         {/* Icon placeholder */}
         {/* <div className="h-16 w-16 shrink-0 rounded-xl bg-black" /> */}
-        <img src={icon1} alt="ic" className="h-16 w-16 shrink-0 rounded-xl"/>
+        <img src={icon} alt="ic" className="h-32 w-32 shrink-0"/>
 
         <div>
           <h3 className="text-xl font-extrabold text-[#1F2A30]">{title}</h3>
@@ -31,18 +27,7 @@ export default function ServiceCard({ title, desc, active }) {
           </p>
 
           <div className="mt-8 flex items-center gap-4">
-            <span
-              className={[
-                "inline-flex h-12 w-12 items-center justify-center rounded-full",
-                active
-                  ? "bg-[#1F2A30] text-white"
-                  : "bg-black/5 text-[#1F2A30]",
-              ].join(" ")}
-            >
-              →
-            </span>
-
-            <span className="text-[15px] font-semibold text-[#1F2A30]">
+            <span className="text-[15px] nes-btn font-semibold text-[#1F2A30]">
               Read More
             </span>
           </div>

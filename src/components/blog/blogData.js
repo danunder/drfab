@@ -1,4 +1,4 @@
-import img from "../../assets/images/hero3.png";
+import img from "../../assets/images/hero3.jpeg";
 
 export const BLOG_POSTS = [
   {

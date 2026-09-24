@@ -1,4 +1,4 @@
-import heroImg from "../../assets/images/hero3.png"; // replace with your project hero bg image
+import heroImg from "../../assets/images/hero3.jpeg"; // replace with your project hero bg image
 
 export default function ProjectsHero() {
   return (

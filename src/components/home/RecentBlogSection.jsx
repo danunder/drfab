@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import BlogCard from "./BlogCard";
-import blogImg from "../../assets/images/hero3.png";
+import blogImg from "../../assets/images/hero3.jpeg";
 
 /**
  * RecentBlogSection

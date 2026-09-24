@@ -48,19 +48,19 @@ export default function FooterDarkSimple() {
             {/* Social icons */}
             <div className="mt-7 flex items-center gap-3">
               <SocialIcon href="#" label="Facebook">
-                <img src={facebookIcon} className="h-7 w-7" />
+                <img src={facebookIcon} alt="" className="h-7 w-7" />
               </SocialIcon>
               <SocialIcon href="#" label="Twitter">
-                <img src={twitterIcon} className="h-7 w-7" />
+                <img src={twitterIcon} alt="" className="h-7 w-7" />
               </SocialIcon>
               <SocialIcon href="#" label="LinkedIn">
-                <img src={linkedinIcon} className="h-7 w-7" />
+                <img src={linkedinIcon} alt="" className="h-7 w-7" />
               </SocialIcon>
               <SocialIcon href="#" label="Instagram">
-                <img src={instagramIcon} className="h-7 w-7" />
+                <img src={instagramIcon} alt="" className="h-7 w-7" />
               </SocialIcon>
               <SocialIcon href="#" label="LinkedIn 2">
-                <img src={linkedinIcon} className="h-7 w-7" />
+                <img src={linkedinIcon} alt="" className="h-7 w-7" />
               </SocialIcon>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function FooterDarkSimple() {
               <ul className="space-y-4 text-sm text-white/60">
                 <FooterArrowLink to="/support" label="Forum Support" />
                 <FooterArrowLink to="/faq" label="Help & FAQ" />
-                <FooterArrowLink to="/contact" label="Contact Us" />
+                <FooterArrowLink to="/#get-in-touch" label="Contact Us" />
                 <FooterArrowLink to="/pricing" label="Pricing & Plans" />
                 <FooterArrowLink to="/cookies" label="Cookie Policy" />
               </ul>
@@ -106,20 +106,19 @@ export default function FooterDarkSimple() {
               <ContactLine
                 icon={<Phone className="h-4 w-4" />}
                 title="Call Us 24/7"
-                value="(+256) 2145.2156"
+                value="+1 416 500 3579"
               />
               <ContactLine
                 icon={<Mail className="h-4 w-4" />}
                 title="Work with us"
-                value="info@Nexora.com"
+                value="hello@drfab.biz"
               />
               <ContactLine
                 icon={<MapPin className="h-4 w-4" />}
                 title="Our Location"
                 value={
                   <>
-                    100 W 49th Ave, Vancouver, BC <br />
-                    Canada
+                    Corso Italia, Toronto, ON <br />
                   </>
                 }
               />

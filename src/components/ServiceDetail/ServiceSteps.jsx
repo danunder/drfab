@@ -1,25 +1,25 @@
-import stepImg1 from "../../assets/images/hero3.png";
-import stepImg2 from "../../assets/images/hero3.png";
+import stepImg1 from "../../assets/images/hero3.jpeg";
+import stepImg2 from "../../assets/images/hero3.jpeg";
 
 const steps = [
   {
     img: stepImg1,
-    title: "Define Your Objectives and Plan",
+    title: "Choose Your Process",
     bullets: [
-      "Outline Key Features",
-      "Choose a Domain Name",
-      "Identify Purpose",
-      "Understand Your Audience",
+      "Resin Printing",
+      "Filament (FDM) Printing",
+      "3D Modelling",
+      "Rapid Prototyping",
     ],
   },
   {
     img: stepImg2,
-    title: "Build and Design Your Website",
+    title: "We Build It Right",
     bullets: [
-      "Outline Key Features",
-      "Choose a Domain Name",
-      "Identify Purpose",
-      "Understand Your Audience",
+      "Engineering-Grade Filaments",
+      "Cosplay & Prop Finishing",
+      "Multi-Material Options",
+      "Quality Checked Before Shipping",
     ],
   },
 ];
@@ -32,14 +32,14 @@ export default function ServiceSteps() {
       </h3>
 
       <p className="mt-4 max-w-3xl text-sm leading-7 text-black/60">
-        Assertively e-enable catalysts for change before fully tested markets.
-        Phosfluorescently maintain solve wireless scenarios after intermediate
-        applications. Conveniently predominate mission-critical initiatives.
+        Tell us what you need and which process fits best — resin for fine
+        detail, FDM filament for strength and size. We'll recommend materials
+        for the application, whether it's a functional part or a cosplay prop.
       </p>
 
       <p className="mt-4 max-w-3xl text-sm leading-7 text-black/60">
-        Phosfluorescently maintain solve wireless scenarios after intermediate
-        applications. Conveniently predominate mission-critical initiatives.
+        Every print is checked for quality before it leaves our shop, so what
+        you get back matches what you approved.
       </p>
 
       <div className="mt-10 divide-y divide-black/10 rounded-2xl border border-black/10 bg-white">

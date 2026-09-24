@@ -15,11 +15,12 @@ export default function TeamCard({ member }) {
       {/* Card */}
       <div className="rounded-3xl bg-white shadow-sm">
         {/* Clickable image area */}
-        <Link to={`/team/${member.slug}`} className="block">
+        <Link to="/about" className="block">
           <div className="relative overflow-hidden rounded-t-2xl">
             {/* Placeholder image */}
             <img
               src={member.image}
+              alt={member.name}
               className="h-[260px] w-full object-cover transition-transform duration-300 group-hover:-translate-y-2"
             />
 
@@ -32,7 +33,7 @@ export default function TeamCard({ member }) {
               <button
                 type="button"
                 aria-label="Open social links"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#1F2A30] shadow-md"
+                className="nes-btn flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#1F2A30] shadow-md"
               >
                 +
               </button>

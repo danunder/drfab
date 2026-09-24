@@ -19,7 +19,7 @@ export default function FooterArea() {
             <div className="relative h-[300px] bg-gray-200 lg:h-[420px]">
               <iframe
                 title="Google Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4756.782789314845!2d-123.11017652398694!3d49.2249757748395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486746f412563f7%3A0x36606d221509fdfe!2sLangara%20College!5e1!3m2!1sen!2sca!4v1771628804124!5m2!1sen!2sca"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11542.779047691316!2d-79.45913715!3d43.67531765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1790207019787!5m2!1sen!2sca"
                 className="absolute inset-0 h-full w-full"
                 style={{ border: 0 }}
                 allowFullScreen
@@ -41,18 +41,18 @@ export default function FooterArea() {
               <div className="mt-5 lg:mt-10 space-x-2 space-y-8 grid grid-cols-1 ">
                 <ContactRow
                   icon={<Phone className="h-5 w-5" />}
-                  title="Call Us 24/7"
-                  value="(+256) 2145.2156"
+                  title="Call Us"
+                  value="+1 416 500 3579"
                 />
                 <ContactRow
                   icon={<Mail className="h-5 w-5" />}
                   title="Work with us"
-                  value="info@Nexora.com"
+                  value="hello@drfab.biz"
                 />
                 <ContactRow
                   icon={<MapPin className="h-5 w-5" />}
                   title="Our Location"
-                  value="125 TownUnited State"
+                  value="Corso Italia, Toronto, ON"
                 />
               </div>
             </div>
@@ -92,9 +92,12 @@ export default function FooterArea() {
                   </div>
                 </div>
 
-                <button className="mt-8 rounded-xl bg-white px-7 py-3 text-sm font-semibold text-[#1F2A30] shadow-sm">
+                <Link
+                  to="/#get-in-touch"
+                  className="nes-btn mt-8 inline-block rounded-xl bg-white px-7 py-3 text-sm font-semibold text-[#1F2A30] shadow-sm"
+                >
                   Contact Us
-                </button>
+                </Link>
               </div>
 
               {/* Quick Links (middle) */}
@@ -106,7 +109,7 @@ export default function FooterArea() {
                   <ul className="space-y-3 text-sm text-white/70">
                     <FooterLink to="/support" label="Forum Support" />
                     <FooterLink to="/faq" label="Help & FAQ" />
-                    <FooterLink to="/contact" label="Contact Us" />
+                    <FooterLink to="/#get-in-touch" label="Contact Us" />
                     <FooterLink to="/pricing" label="Pricing & Plans" />
                     <FooterLink to="/cookies" label="Cookie Policy" />
                   </ul>
@@ -141,7 +144,7 @@ export default function FooterArea() {
 
                   <button
                     type="button"
-                    className="grid h-[46px] w-[52px] place-items-center rounded-lg bg-[#1F2A30] text-white shadow-sm"
+                    className="nes-btn is-primary grid h-[46px] w-[52px] place-items-center rounded-lg bg-[#1F2A30] text-white shadow-sm"
                     aria-label="Subscribe"
                   >
                     <Send className="h-4 w-4" />
@@ -159,7 +162,7 @@ export default function FooterArea() {
 
             {/* Copyright */}
             <p className="mt-6 text-center text-xs text-white/70">
-              Nexora - Copyright 2026. All rights reserved.
+              © 2026 drfab. A partnership of Dan & Ryan in Ontario, Canada.
             </p>
           </div>
         </div>

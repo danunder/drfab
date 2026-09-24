@@ -2,9 +2,9 @@ import ServiceFeatureGrid from "./ServiceFeatureGrid";
 import ServiceSteps from "./ServiceSteps";
 import ServiceFaq from "./ServiceFaq";
 
-import featuredImg from "../../assets/images/hero3.png";
+import featuredImg from "../../assets/images/hero3.jpeg";
 
-export default function ServiceDetailContent() {
+export default function ServiceDetailContent({ title, paragraphs = [] }) {
   return (
     <div>
       {/* Featured Image */}
@@ -14,19 +14,14 @@ export default function ServiceDetailContent() {
 
       {/* Title */}
       <h2 className="mt-8 text-2xl font-extrabold text-[#1F2A30]">
-        Business Growth Management
+        {title}
       </h2>
 
-      <p className="mt-4 text-sm leading-7 text-black/60">
-        Continually myocardinate holistic mindshare with client-based web
-        services. Assertively e-enable catalysts for change before tested
-        markets...
-      </p>
-
-      <p className="mt-4 text-sm leading-7 text-black/60">
-        Intrinsically coordinate multifunctional functionalities reliable
-        potentialities...
-      </p>
+      {paragraphs.map((p) => (
+        <p key={p} className="mt-4 text-sm leading-7 text-black/60">
+          {p}
+        </p>
+      ))}
 
       <ServiceFeatureGrid />
 

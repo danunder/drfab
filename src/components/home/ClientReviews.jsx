@@ -77,7 +77,7 @@ export default function ClientReviews() {
               type="button"
               onClick={goPrev}
               aria-label="Previous review"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 text-[#1F2A30] hover:bg-black/10"
+              className="nes-btn inline-flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 text-[#1F2A30] hover:bg-black/10"
             >
               ←
             </button>
@@ -90,7 +90,7 @@ export default function ClientReviews() {
               type="button"
               onClick={goNext}
               aria-label="Next review"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 text-[#1F2A30] hover:bg-black/10"
+              className="nes-btn inline-flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 text-[#1F2A30] hover:bg-black/10"
             >
               →
             </button>
@@ -103,7 +103,11 @@ export default function ClientReviews() {
             {/* Left image placeholder */}
             <div className="bg-gray-200">
               {/* Replace with <img /> later */}
-              <img src={active.image} className="h-[280px] w-full sm:h-[360px] lg:h-full" />
+              <img
+                src={active.image}
+                alt={`Portrait of ${active.name}`}
+                className="h-[280px] w-full sm:h-[360px] lg:h-full"
+              />
             </div>
 
             {/* Right quote panel */}

@@ -1,4 +1,3 @@
-import Navbar from "../components/layout/Navbar";
 import FooterDarkSimple from "../components/contact/FooterDarkSimple";
 
 // Sections
@@ -10,12 +9,13 @@ import ProjectStatsRow from "../components/projects/detail/ProjectStatsRow";
 import ProjectFaqSection from "../components/projects/detail/ProjectFaqSection";
 import ProjectPrevNextNav from "../components/projects/detail/ProjectPrevNextNav";
 import RelatedProjects from "../components/projects/detail/RelatedProjects";
+import useDocumentMeta from "../hooks/useDocumentMeta";
 
 // Demo images (replace with your real ones)
-import heroBg from "../assets/images/hero3.png";
-import imgMain from "../assets/images/hero3.png";
-import imgSmall1 from "../assets/images/hero3.png";
-import imgSmall2 from "../assets/images/hero3.png";
+import heroBg from "../assets/images/hero3.jpeg";
+import imgMain from "../assets/images/hero3.jpeg";
+import imgSmall1 from "../assets/images/hero3.jpeg";
+import imgSmall2 from "../assets/images/hero3.jpeg";
 
 export default function ProjectDetailPage() {
   // Demo content (later you can fetch by slug/id)
@@ -105,6 +105,11 @@ export default function ProjectDetailPage() {
       image: imgMain,
     },
   ];
+
+  useDocumentMeta({
+    title: project.title,
+    description: project.excerpt,
+  });
 
   return (
     <div className="min-h-screen bg-white">

@@ -1,4 +1,4 @@
-import avatar from "../../assets/images/hero3.png";
+import avatar from "../../assets/images/hero3.jpeg";
 
 export default function BlogDetailAuthorCard() {
   return (

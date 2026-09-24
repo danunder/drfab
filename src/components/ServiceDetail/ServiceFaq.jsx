@@ -24,20 +24,18 @@ const DEFAULT_FAQS = [
   },
 ];
 
-export default function ServiceFaq({ faqs = DEFAULT_FAQS }) {
+export default function ServiceFaq({
+  faqs = DEFAULT_FAQS,
+  heading = "Popular Question",
+  intro = "Conveniently predominate revolutionary quality vectors through future-proof manufactured products. Objectively envisioner high in convergence through collaborative networks.",
+}) {
   const [openIdx, setOpenIdx] = useState(0);
 
   return (
     <section className="mt-14">
-      <h3 className="text-2xl font-extrabold text-[#1F2A30]">
-        Popular Question
-      </h3>
+      <h3 className="text-2xl font-extrabold text-[#1F2A30]">{heading}</h3>
 
-      <p className="mt-4 max-w-3xl text-sm leading-7 text-black/60">
-        Conveniently predominate revolutionary quality vectors through
-        future-proof manufactured products. Objectively envisioner high in
-        convergence through collaborative networks.
-      </p>
+      <p className="mt-4 max-w-3xl text-sm leading-7 text-black/60">{intro}</p>
 
       <div className="mt-8 space-y-4">
         {faqs.map((f, idx) => {
@@ -54,6 +52,7 @@ export default function ServiceFaq({ faqs = DEFAULT_FAQS }) {
               <button
                 type="button"
                 onClick={() => setOpenIdx(open ? -1 : idx)}
+                aria-expanded={open}
                 className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
               >
                 <span className="text-sm font-extrabold text-[#1F2A30]">

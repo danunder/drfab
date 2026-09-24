@@ -4,9 +4,16 @@ import BlogSidebar from "../components/blog/BlogSidebar";
 import BlogPagination from "../components/blog/BlogPagination";
 import NewsletterCta from "../components/contact/NewsletterCta";
 import FooterDarkSimple from "../components/contact/FooterDarkSimple";
+import useDocumentMeta from "../hooks/useDocumentMeta";
 // import TrustedClients from "../components/Home/TrustedClients"; // if you already have it
 
 export default function Blog() {
+  useDocumentMeta({
+    title: "Blog",
+    description:
+      "News, tips, and behind-the-scenes updates from the drfab 3D printing and modelling shop.",
+  });
+
   return (
     <main className="bg-[#F4F6F8]">
       <BlogHero />

@@ -1,25 +1,25 @@
-import { ShieldCheck, Headphones, Clock, BadgeCheck } from "lucide-react";
+import { Droplet, Layers3, Zap, Sparkles } from "lucide-react";
 
 const features = [
   {
-    icon: ShieldCheck,
-    title: "Instant Business Growth",
-    desc: "Maintain wireless scenarios after sure quality vectors future",
+    icon: Droplet,
+    title: "Resin Printing",
+    desc: "High-detail SLA/resin prints for miniatures, props, and fine features.",
   },
   {
-    icon: Clock,
-    title: "24/7 Quality Service",
-    desc: "Maintain wireless scenarios after sure quality vectors future",
+    icon: Layers3,
+    title: "Filament (FDM) Printing",
+    desc: "Durable PLA, PETG, ABS, ASA, and Nylon prints for functional parts.",
   },
   {
-    icon: Headphones,
-    title: "Easy Customer Service",
-    desc: "Maintain wireless scenarios after sure quality vectors future",
+    icon: Zap,
+    title: "Rapid Prototyping",
+    desc: "Fast turnaround iterations so you can test and refine before production.",
   },
   {
-    icon: BadgeCheck,
-    title: "Quality Cost Service",
-    desc: "Maintain wireless scenarios after sure quality vectors future",
+    icon: Sparkles,
+    title: "Engineering Filaments & Cosplay",
+    desc: "Tough engineering-grade materials, plus finishing for cosplay and props.",
   },
 ];
 

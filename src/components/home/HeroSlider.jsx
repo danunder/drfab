@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import hero1 from "../../assets/images/hero1.png";
+import { Link } from "react-router-dom";
+import hero1 from "../../assets/images/hero1.jpeg";
 import hero2 from "../../assets/images/hero2.png";
-import hero3 from "../../assets/images/hero3.png";
+import hero3 from "../../assets/images/hero3.jpeg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 /**
@@ -14,24 +15,24 @@ export default function HeroSlider() {
   const slides = useMemo(
     () => [
       {
-        eyebrow: "WELCOME! START GROWING YOUR BUSINESS TODAY",
-        titleTop: "Innovative Solutions",
-        titleBottom: "Tailored for Your Success",
-        body: "Porttitor ornare fermentum aliquam pharetra facilisis gravida risus suscipit Duis feugiat fusce conubia ridiculus tristique parturient",
+        eyebrow: "",
+        titleTop: "From Concept to Product.",
+        titleBottom: "No Minimums.",
+        body: "Custom 3D printing, modelling, and packaging for Ontario's makers, creators, and small businesses.",
         imageUrl: hero1, // TODO: replace with your image path
       },
       {
-        eyebrow: "WELCOME! START GROWING YOUR BUSINESS TODAY",
-        titleTop: "Impressive Solutions",
-        titleBottom: "Crafted for Your Goal",
-        body: "Porttitor ornare fermentum aliquam pharetra facilisis gravida risus suscipit Duis feugiat fusce conubia ridiculus tristique parturient",
+        eyebrow: "",
+        titleTop: "One shop.",
+        titleBottom: "Whole chain.",
+        body: "drfab takes your idea from sketch to shelf-ready product — all under one roof. No weeks of back-and-forth between vendors.",
         imageUrl: hero2, // TODO
       },
       {
-        eyebrow: "WELCOME! START GROWING YOUR BUSINESS TODAY",
-        titleTop: "Best Solutions",
-        titleBottom: "Intro for Your Business",
-        body: "Porttitor ornare fermentum aliquam pharetra facilisis gravida risus suscipit Duis feugiat fusce conubia ridiculus tristique parturient",
+        eyebrow: "BUILT FOR SMALL RUNS AND BIG IDEAS",
+        titleTop: "Model. Print.",
+        titleBottom: "Package. Done.",
+        body: "From a napkin sketch to a retail-ready product — modelling, 3D printing, and custom packaging in quantities of 1 to 500.",
         imageUrl: hero3, // TODO
       },
     ],
@@ -78,7 +79,7 @@ export default function HeroSlider() {
               {s.eyebrow}
             </p>
 
-            <h1 className="mt-4 text-4xl font-extrabold leading-[1.08] md:text-6xl">
+            <h1 className="mt-4 text-2xl font-extrabold leading-[1.08] md:text-6xl">
               <span className="block">{s.titleTop}</span>
               <span className="block">{s.titleBottom}</span>
             </h1>
@@ -88,12 +89,12 @@ export default function HeroSlider() {
             </p>
 
             <div className="mt-8">
-              <button
-                type="button"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-[#1F2A30] hover:bg-white/90"
+              <Link
+                to="/#get-in-touch"
+                className="nes-btn inline-flex h-12 items-center justify-center px-8 text-sm font-semibold text-[#1F2A30] hover:bg-white/90"
               >
-                Get Consultant
-              </button>
+                Get a Free Quote →
+              </Link>
             </div>
           </div>
         </div>
@@ -103,7 +104,7 @@ export default function HeroSlider() {
           type="button"
           aria-label="Previous slide"
           onClick={prev}
-          className="absolute left-6 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#1F2A30] shadow md:flex"
+          className="nes-btn absolute left-6 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center text-[#1F2A30] shadow md:flex "
         >
           <ChevronLeft />
         </button>
@@ -112,7 +113,7 @@ export default function HeroSlider() {
           type="button"
           aria-label="Next slide"
           onClick={next}
-          className="absolute right-6 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#1F2A30] shadow md:flex"
+          className="nes-btn absolute right-6 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center text-[#1F2A30] shadow md:flex"
         >
           <ChevronRight />
         </button>
@@ -122,7 +123,7 @@ export default function HeroSlider() {
           <button
             type="button"
             onClick={prev}
-            className="h-11 w-11 rounded-full bg-white text-[#1F2A30]"
+            className="nes-btn h-11 w-11 text-[#1F2A30]"
             aria-label="Previous slide (mobile)"
           >
             ‹
@@ -130,7 +131,7 @@ export default function HeroSlider() {
           <button
             type="button"
             onClick={next}
-            className="h-11 w-11 rounded-full bg-white text-[#1F2A30]"
+            className="nes-btn h-11 w-11 text-[#1F2A30]"
             aria-label="Next slide (mobile)"
           >
             ›

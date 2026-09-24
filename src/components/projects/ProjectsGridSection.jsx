@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 // Replace these images with your real project images
-import p1 from "../../assets/images/hero3.png";
-import p2 from "../../assets/images/hero3.png";
-import p3 from "../../assets/images/hero3.png";
-import p4 from "../../assets/images/hero3.png";
+import p1 from "../../assets/images/hero3.jpeg";
+import p2 from "../../assets/images/hero3.jpeg";
+import p3 from "../../assets/images/hero3.jpeg";
+import p4 from "../../assets/images/hero3.jpeg";
 
 export default function ProjectsGridSection() {
   const projects = [

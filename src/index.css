@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 @import "tailwindcss";
+@import "nes.css/css/nes.min.css" layer(base);
 
+html, body {
+  font-family: 'Press Start 2P', monospace;
+}
 html,
 body {
   margin: 0;
@@ -13,4 +18,94 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+
+
+.nes-icon.etsy {
+  display: inline-block;
+  background-color: #f56400; 
+  position: relative;
+  
+  width: calc(var(--nes-pixel-size, 1px) * 16);
+  height: calc(var(--nes-pixel-size, 1px) * 16);
+  
+
+  image-rendering: pixelated;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    
+    width: var(--nes-pixel-size, 1px);
+    height: var(--nes-pixel-size, 1px);
+    background: transparent;
+    
+    box-shadow:
+      /* Top Serif/Bar */
+      calc(var(--nes-pixel-size, 1px) * 1) calc(var(--nes-pixel-size, 1px) * 1) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 2) calc(var(--nes-pixel-size, 1px) * 1) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 1) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 1) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 5) calc(var(--nes-pixel-size, 1px) * 1) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 6) calc(var(--nes-pixel-size, 1px) * 1) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 7) calc(var(--nes-pixel-size, 1px) * 1) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 8) calc(var(--nes-pixel-size, 1px) * 1) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 1) calc(var(--nes-pixel-size, 1px) * 2) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 2) calc(var(--nes-pixel-size, 1px) * 2) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 2) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 2) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 5) calc(var(--nes-pixel-size, 1px) * 2) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 6) calc(var(--nes-pixel-size, 1px) * 2) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 7) calc(var(--nes-pixel-size, 1px) * 2) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 8) calc(var(--nes-pixel-size, 1px) * 2) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 1) calc(var(--nes-pixel-size, 1px) * 3) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 2) calc(var(--nes-pixel-size, 1px) * 3) 0 #fff,
+
+      /* Main Spine */
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 3) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 3) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 4) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 4) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 5) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 5) 0 #fff,
+      
+      /* Middle Bar */
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 6) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 6) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 5) calc(var(--nes-pixel-size, 1px) * 6) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 6) calc(var(--nes-pixel-size, 1px) * 6) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 7) calc(var(--nes-pixel-size, 1px) * 6) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 7) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 7) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 5) calc(var(--nes-pixel-size, 1px) * 7) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 6) calc(var(--nes-pixel-size, 1px) * 7) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 7) calc(var(--nes-pixel-size, 1px) * 7) 0 #fff,
+
+      /* Lower Spine */
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 8) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 8) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 9) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 9) 0 #fff,
+
+      /* Bottom Serif/Bar */
+      calc(var(--nes-pixel-size, 1px) * 1) calc(var(--nes-pixel-size, 1px) * 10) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 2) calc(var(--nes-pixel-size, 1px) * 10) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 10) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 10) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 5) calc(var(--nes-pixel-size, 1px) * 10) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 6) calc(var(--nes-pixel-size, 1px) * 10) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 7) calc(var(--nes-pixel-size, 1px) * 10) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 8) calc(var(--nes-pixel-size, 1px) * 10) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 1) calc(var(--nes-pixel-size, 1px) * 11) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 2) calc(var(--nes-pixel-size, 1px) * 11) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 3) calc(var(--nes-pixel-size, 1px) * 11) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 4) calc(var(--nes-pixel-size, 1px) * 11) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 5) calc(var(--nes-pixel-size, 1px) * 11) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 6) calc(var(--nes-pixel-size, 1px) * 11) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 7) calc(var(--nes-pixel-size, 1px) * 11) 0 #fff,
+      calc(var(--nes-pixel-size, 1px) * 8) calc(var(--nes-pixel-size, 1px) * 11) 0 #fff;
+  }
 }

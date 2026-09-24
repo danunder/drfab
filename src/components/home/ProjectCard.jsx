@@ -11,7 +11,11 @@ export default function ProjectCard({ to, title, category, image }) {
     <Link to={to} className="group block">
       <div className="relative overflow-hidden rounded-3xl bg-gray-200">
         {/* Image placeholder (swap with <img /> later) */}
-        <img src={image} className="h-[260px] w-full sm:h-[300px] object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className="h-[260px] w-full sm:h-[300px] object-cover"
+        />
 
         {/* Info badge */}
         <div className="absolute bottom-6 left-6 rounded-2xl bg-white px-8 py-5 shadow-lg">

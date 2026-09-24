@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function BlogSidebarHelpCard() {
   return (
     <div className="rounded-2xl bg-[#1F2A30] p-8 text-white shadow-[0_20px_60px_rgba(0,0,0,0.14)]">
@@ -15,12 +17,12 @@ export default function BlogSidebarHelpCard() {
         Need Help? We Are <br /> Here To Help You
       </p>
 
-      <button
-        type="button"
-        className="mt-8 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#1F2A30]"
+      <Link
+        to="/#get-in-touch"
+        className="nes-btn mt-8 block w-fit rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#1F2A30]"
       >
         Contact Us
-      </button>
+      </Link>
     </div>
   );
 }

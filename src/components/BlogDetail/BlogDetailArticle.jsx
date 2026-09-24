@@ -3,7 +3,7 @@ import BlogDetailTagsShare from "./BlogDetailTagsShare";
 import BlogDetailAuthorCard from "./BlogDetailAuthorCard";
 import BlogDetailReplyForm from "./BlogDetailReplyForm";
 
-import inlineImg from "../../assets/images/hero3.png";
+import inlineImg from "../../assets/images/hero3.jpeg";
 
 export default function BlogDetailArticle({ post }) {
   return (

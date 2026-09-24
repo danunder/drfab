@@ -1,12 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  BriefcaseBusiness,
-  HardHat,
-  Lightbulb,
-  LineChart,
-  Wrench,
-} from "lucide-react";
-import dropdownImg from "../../assets/images/hero3.png";
+import { SERVICES } from "../../data/servicesData";
 
 export default function ServiceDropdown({
   open,
@@ -14,46 +7,13 @@ export default function ServiceDropdown({
   onMouseEnter,
   onMouseLeave,
 }) {
-  const items = [
-    {
-      to: "/services/business-solution",
-      title: "Business Solution",
-      desc: "Once planning is complete, site preparation begins.",
-      icon: <BriefcaseBusiness className="h-6 w-6 text-[#1F2A30]" />,
-    },
-    {
-      to: "/services/structural-engineering",
-      title: "Structural Engineering",
-      desc: "We provide best IT solutions for any type of business.",
-      icon: <HardHat className="h-6 w-6 text-[#1F2A30]" />,
-    },
-    {
-      to: "/services/creative-ideas",
-      title: "Creative Ideas",
-      desc: "Quis nulla blandit vulputate morbi adipiscing sem vestibulum.",
-      icon: <Lightbulb className="h-6 w-6 text-[#1F2A30]" />,
-    },
-    {
-      to: "/services/post-construction",
-      title: "Post-Construction",
-      desc: "We provide best IT solutions for any type of business as.",
-      icon: <Wrench className="h-6 w-6 text-[#1F2A30]" />,
-    },
-    {
-      to: "/services/market-research",
-      title: "Market Research",
-      desc: "Elever Architecture is a New-York–based studio on modern...",
-      icon: <LineChart className="h-6 w-6 text-[#1F2A30]" />,
-    },
-  ];
-
   return (
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className={[
         // Position & size (centered)
-        "fixed left-1/2 top-32 z-9999 w-[min(1120px,calc(100vw-2rem))] -translate-x-1/2",
+        "fixed left-1/2 top-48 z-9999 w-[min(680px,calc(100vw-2rem))] -translate-x-1/2",
 
         // Animation + interaction
         "origin-top transition-all duration-200 ease-out",
@@ -63,70 +23,37 @@ export default function ServiceDropdown({
       ].join(" ")}
     >
       <div className="overflow-hidden rounded-b-xl bg-white shadow-[0_22px_70px_rgba(0,0,0,0.18)]">
-        <div className="grid lg:grid-cols-[1.55fr_0.85fr]">
-          {/* LEFT */}
-          <div className="p-8">
-            <div className="grid grid-cols-2 gap-6">
-              {items.slice(0, 4).map((it) => (
+        <div className="p-6">
+          <div className="grid grid-cols-2 gap-4">
+            {SERVICES.map((it) => {
+              const Icon = it.icon;
+              return (
                 <Link
-                  key={it.title}
-                  to={it.to}
+                  key={it.slug}
+                  to={`/services/${it.slug}`}
                   onClick={onClose}
-                  className="group rounded-xl bg-[#F7F8F9] p-5 transition hover:bg-[#F2F4F6]"
+                  className="group rounded-xl bg-[#F7F8F9] p-4 transition hover:bg-[#F2F4F6]"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1">{it.icon}</div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <Icon className="h-5 w-5 text-[#1F2A30]" />
+                    </div>
                     <div>
-                      <p className="text-[16px] font-extrabold text-[#1F2A30]">
+                      <p className="text-[15px] font-extrabold text-[#1F2A30]">
                         {it.title}
                       </p>
-                      <p className="mt-2 text-sm leading-relaxed text-black/55">
-                        {it.desc}
+                      <p className="mt-1 text-xs leading-relaxed text-black/55">
+                        {it.shortDesc}
                       </p>
                     </div>
                   </div>
                 </Link>
-              ))}
-
-              {/* 5th item */}
-              <Link
-                to={items[4].to}
-                onClick={onClose}
-                className="group col-span-1 rounded-xl bg-[#F7F8F9] p-5 transition hover:bg-[#F2F4F6]"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="mt-1">{items[4].icon}</div>
-                  <div>
-                    <p className="text-[16px] font-extrabold text-[#1F2A30]">
-                      {items[4].title}
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-black/55">
-                      {items[4].desc}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-
-              {/* CTA bar */}
-              <div className="col-span-1 rounded-xl bg-[#1F2A30] p-6 text-white">
-                <p className="text-lg font-extrabold">Get Free Consultation</p>
-                <p className="mt-2 text-sm text-white/80">
-                  From preconstruction to virtual design and construction.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT IMAGE */}
-          <div className="relative hidden lg:block">
-            <img
-              src={dropdownImg}
-              alt="Services preview"
-              className="h-full w-full object-cover"
-            />
+              );
+            })}
           </div>
         </div>
       </div>
     </div>
   );
 }
+

@@ -5,12 +5,12 @@ export default function DownloadCard() {
 
       <div className="mt-6 space-y-3">
         <div className="flex items-center justify-between rounded-lg bg-white px-4 py-3 text-sm shadow">
-          Our Brochures
+          Material & Print Guide
           <span>→</span>
         </div>
 
         <div className="flex items-center justify-between rounded-lg bg-white px-4 py-3 text-sm shadow">
-          Company Details
+          Company Profile
           <span>→</span>
         </div>
       </div>

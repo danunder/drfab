@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import facebookIcon from "../../assets/social-icons/facebook.svg";
-import twitterIcon from "../../assets/social-icons/twitter.svg";
-import instagramIcon from "../../assets/social-icons/instagram.svg";
-import linkedinIcon from "../../assets/social-icons/linkedin.svg";
+import logo from "../../assets/images/drfablogo.png";
 import { Globe, MailCheck, MapPin, Phone } from "lucide-react";
+import etsyIcon from "../../assets/social-icons/etsy.png";
+import tiktokIcon from "../../assets/social-icons/tiktok.png";
 
 /**
  * SidePanel (Desktop off-canvas modal)
@@ -12,12 +11,6 @@ import { Globe, MailCheck, MapPin, Phone } from "lucide-react";
  * - Locks body scroll while open
  */
 
-const socialIcons = [
-  { label: "facebook Icon", image: facebookIcon },
-  { label: "twitter Icon", image: twitterIcon },
-  { label: "instagram Icon", image: instagramIcon },
-  { label: "linkedin Icon", image: linkedinIcon },
-];
 
 export default function SidePanel({ open, onClose }) {
   // Close on ESC
@@ -47,48 +40,37 @@ export default function SidePanel({ open, onClose }) {
   return (
     <div className="fixed inset-0 z-50 hidden md:block">
       {/* Backdrop */}
-      <button
-        className="absolute inset-0 bg-black/40"
+      {/* <button
+        className="nes-btn is-error inline-flex h-10 w-10 items-center justify-center bg-[#1F2A30] text-white text-3xl"
         aria-label="Close side panel backdrop"
         onClick={onClose}
-      />
+      >X</button> */}
 
       {/* Panel */}
       <aside className="absolute right-0 top-0 h-full w-[420px] max-w-[92vw] bg-white shadow-xl">
-        {/* Close button */}
-        <div className="p-4">
+        {/* Header: logo top-left, close button top-right */}
+        <div className="flex items-center justify-between p-6">
+          <img src={logo} alt="drfab" className="h-16 w-auto origin-left rotate-[5deg] scale-170" />
+
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center bg-[#1F2A30] text-white"
+            className="nes-btn is-error inline-flex h-10 w-10 items-center justify-center bg-[#1F2A30] text-white text-xl"
             aria-label="Close side panel"
             onClick={onClose}
-          >
-            ✕
-          </button>
+          >X</button>
         </div>
 
         <div className="px-8 pb-10">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            {/* Logo placeholder */}
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1F2A30] text-white">
-              ↗
-            </div>
-            <div className="leading-tight">
-              <div className="text-3xl font-extrabold text-[#1F2A30]">
-                Nexora
-              </div>
-              <div className="-mt-1 text-sm text-[#5C6B73]">
-                Business Solution
-              </div>
-            </div>
+          <div className="mt-4 text-lg text-[#5C6B73]">
+            3d modelling
+          </div>
+          <div className="mt-2 text-lg text-[#5C6B73]">
+            & printshop
           </div>
 
           {/* Description */}
           <p className="mt-6 max-w-sm text-[15px] leading-7 text-[#6B7780]">
-            We must explain to you how all seds this mistaken idea denouncing
-            pleasures and praising account. All seds this mistaken idea
-            denouncing pleasures.
+            No jobs too small, please give us a call.
           </p>
 
           {/* Contact block */}
@@ -101,33 +83,51 @@ export default function SidePanel({ open, onClose }) {
               <IconBubble>
                 <Phone />
               </IconBubble>
-              <span>+8801234566789</span>
+              <span>+1 416 500 3579</span>
             </li>
             <li className="flex items-center gap-3">
               <IconBubble>
                 <MailCheck />
               </IconBubble>
-              <span>example@gmail.com</span>
+              <span>hello@drfab.biz</span>
             </li>
             <li className="flex items-center gap-3">
               <IconBubble>
                 <Globe />
               </IconBubble>
-              <span>www.webexample.com</span>
+              <span>www.drfab.biz</span>
             </li>
             <li className="flex items-center gap-3">
               <IconBubble>
                 <MapPin />
               </IconBubble>
-              <span>100 W 49th Ave, Vancouver, BC</span>
+              <span>Corso Italia, Toronto, ON</span>
             </li>
           </ul>
 
           {/* Socials */}
-          <div className="mt-8 flex items-center gap-4">
-            {socialIcons.map((icon, idx) => (
-              <SocialCircle key={idx} label={icon.label} image={icon.image} />
-            ))}
+          <div className="mt-8 flex items-center gap-3">
+            <a href="https://www.etsy.com/ca/people/tgg9bpgjs03j492z" target="_blank" rel="noopener noreferrer">
+                                <img
+                                  src={etsyIcon}
+                                  alt="Etsy"
+                                  className="h-12 w-12 rounded"
+                                />
+                              </a>
+                              <a href="https://www.tiktok.com/@drfab.biz" target="_blank" rel="noopener noreferrer">
+                                <img
+                                  src={tiktokIcon}
+                                  alt="TikTok"
+                                  className="h-15 w-30 rounded"
+                                />
+                              </a>
+                            <a href="https://www.instagram.com/drfab.biz/" target="_blank" rel="noopener noreferrer">
+                            
+                              <i
+                                className={`nes-icon is-medium instagram mt-1`}
+                                aria-hidden="true"
+                              ></i>
+                            </a>
           </div>
         </div>
       </aside>

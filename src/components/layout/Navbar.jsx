@@ -1,19 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import SidePanel from "./SidePanel";
 import ServiceDropdown from "./ServiceDropdown";
+import ProjectsDropdown from "./ProjectsDropdown";
 import { Mail, Clock, Search, Menu, X, ChevronDown } from "lucide-react";
-import facebookIcon from "../../assets/social-icons/facebook.svg";
-import twitterIcon from "../../assets/social-icons/twitter.svg";
-import instagramIcon from "../../assets/social-icons/instagram.svg";
-import linkedinIcon from "../../assets/social-icons/linkedin.svg";
+import logo from "../../assets/images/drfablogo.png";
+import etsyIcon from "../../assets/social-icons/etsy.png";
+import tiktokIcon from "../../assets/social-icons/tiktok.png";
 
-const socialIcons = [
-  { label: "facebook Icon", image: facebookIcon },
-  { label: "twitter Icon", image: twitterIcon },
-  { label: "instagram Icon", image: instagramIcon },
-  { label: "linkedin Icon", image: linkedinIcon },
-];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,14 +17,16 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const closeTimerRef = useRef(null);
 
+  // Projects dropdown
+  const [projectsOpen, setProjectsOpen] = useState(false);
+  const projectsCloseTimerRef = useRef(null);
+
   const navItems = useMemo(
     () => [
-      { label: "Home", to: "/", hasDropdown: false },
-      { label: "Service", to: "/services", hasDropdown: true },
-      { label: "Project", to: "/projects", hasDropdown: false },
-      { label: "Blog", to: "/blog", hasDropdown: false },
-      { label: "Contact", to: "/contact", hasDropdown: false },
+      { label: "Services", to: "/services", hasDropdown: true },
+      { label: "Projects", to: "/projects", hasDropdown: true },
       { label: "About", to: "/about", hasDropdown: false },
+      { label: "Contact", to: "/#get-in-touch", hasDropdown: false },
     ],
     [],
   );
@@ -47,6 +43,7 @@ export default function Navbar() {
       if (e.key === "Escape") {
         setMobileOpen(false);
         setServicesOpen(false);
+        setProjectsOpen(false);
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -71,6 +68,20 @@ export default function Navbar() {
     if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
     closeTimerRef.current = window.setTimeout(() => {
       setServicesOpen(false);
+    }, 140);
+  };
+
+  const openProjects = () => {
+    if (projectsCloseTimerRef.current)
+      window.clearTimeout(projectsCloseTimerRef.current);
+    setProjectsOpen(true);
+  };
+
+  const scheduleCloseProjects = () => {
+    if (projectsCloseTimerRef.current)
+      window.clearTimeout(projectsCloseTimerRef.current);
+    projectsCloseTimerRef.current = window.setTimeout(() => {
+      setProjectsOpen(false);
     }, 140);
   };
 
@@ -109,38 +120,46 @@ export default function Navbar() {
           <div className="flex items-center gap-8 text-sm">
             <div className="flex items-center gap-2">
               <span className="grid h-6 w-6 place-items-center rounded bg-white/10">
-                <Mail className="h-4 w-4 text-white/90" />
+                <i className="nes-icon gmail is-small" aria-hidden="true"></i>
               </span>
-              <span>support@Nexora.com</span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="grid h-6 w-6 place-items-center rounded bg-white/10">
-                <Clock className="h-4 w-4 text-white/90" />
-              </span>
-              <span>Working: 8.00am - 5.00pm</span>
+              <span><a href="mailto:hello@drfab.biz">hello@drfab.biz</a></span>
             </div>
           </div>
 
           <div className="flex items-center gap-6 text-sm">
             <nav className="flex items-center gap-6">
-              <a className="opacity-90 hover:opacity-100" href="#company-news">
-                Company news
-              </a>
-              <a className="opacity-90 hover:opacity-100" href="#faq">
+              <Link className="opacity-90 hover:opacity-100" to="/faq">
                 Faq
-              </a>
-              <a className="opacity-90 hover:opacity-100" href="#contact-top">
+              </Link>
+              <Link className="opacity-90 hover:opacity-100" to="/#get-in-touch">
                 Contact
-              </a>
+              </Link>
             </nav>
 
             <span className="h-4 w-px bg-white/20" />
 
-            <div className="flex items-center gap-4">
-              {socialIcons.map((icon, idx) => (
-                <SocialDot key={idx} label={icon.label} image={icon.image} />
-              ))}
+            <div className="flex items-center">
+                  <a href="https://www.etsy.com/ca/people/tgg9bpgjs03j492z" target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={etsyIcon}
+                      alt="Etsy"
+                      className="h-8 w-8 rounded"
+                    />
+                  </a>
+                  <a href="https://www.tiktok.com/@drfab.biz" target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={tiktokIcon}
+                      alt="TikTok"
+                      className="h-10 w-20 rounded"
+                    />
+                  </a>
+                <a
+                  href="https://www.instagram.com/drfab.biz/" target="_blank" rel="noopener noreferrer">
+                  <i
+                    className={`nes-icon instagram`}
+                    aria-hidden="true"
+                  ></i>
+                </a>
             </div>
           </div>
         </div>
@@ -158,29 +177,29 @@ export default function Navbar() {
         ].join(" ")}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1F2A30] text-white">
-              ↗
-            </div>
-            <div className="leading-tight">
-              <div className="text-2xl font-extrabold text-[#1F2A30]">
-                Nexora
-              </div>
-              <div className="-mt-1 text-sm text-[#5C6B73]">
-                Business Solution
-              </div>
-            </div>
-          </NavLink>
+          {/* Logo + (subtitle / nav) column */}
+          <div className="flex items-center gap-4">
+            <NavLink to="/" className="shrink-0">
+              <img
+                src={logo}
+                alt="drfab"
+                className="h-24 md:h-30 w-auto rotate-[5deg]"
+              />
+            </NavLink>
 
-          {/* Desktop nav */}
-          <nav className="relative hidden items-center gap-8 md:flex">
-            {navItems.map((item) => {
-              if (item.label === "Service") {
+            <div className="ml-6">
+              <div className="text-2xl text-[#5C6B73]">
+                3d modelling & printshop
+              </div>
+
+              {/* Desktop nav */}
+              <nav className="relative mt-4 hidden md:grid grid-flow-col auto-cols-max items-center">
+                {navItems.map((item) => {
+              if (item.label === "Services") {
                 return (
                   <div
                     key={item.label}
-                    className="relative"
+                    className="relative md:inline-block px-4"
                     onMouseEnter={openServices}
                     onMouseLeave={scheduleCloseServices}
                   >
@@ -188,7 +207,7 @@ export default function Navbar() {
                       to={item.to}
                       className={({ isActive }) =>
                         [
-                          "flex items-center gap-2 text-[16px] font-semibold text-[#1F2A30] hover:text-black",
+                          "!inline-flex items-center gap-2 text-[10px] md:text-[14px] font-semibold text-[#1F2A30] hover:text-black",
                           isActive ? "text-black" : "",
                         ].join(" ")
                       }
@@ -207,13 +226,44 @@ export default function Navbar() {
                 );
               }
 
+              if (item.label === "Projects") {
+                return (
+                  <div
+                    key={item.label}
+                    className="relative md:inline-block px-4"
+                    onMouseEnter={openProjects}
+                    onMouseLeave={scheduleCloseProjects}
+                  >
+                    <NavLink
+                      to={item.to}
+                      className={({ isActive }) =>
+                        [
+                          "!inline-flex items-center gap-2 text-[10px] md:text-[14px] font-semibold text-[#1F2A30] hover:text-black",
+                          isActive ? "text-black" : "",
+                        ].join(" ")
+                      }
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown className="h-4 w-4 opacity-70" />
+                    </NavLink>
+
+                    <ProjectsDropdown
+                      open={projectsOpen}
+                      onMouseEnter={openProjects}
+                      onMouseLeave={scheduleCloseProjects}
+                      onClose={() => setProjectsOpen(false)}
+                    />
+                  </div>
+                );
+              }
+
               return (
                 <NavLink
                   key={item.label}
                   to={item.to}
                   className={({ isActive }) =>
                     [
-                      "flex items-center gap-2 text-[16px] font-semibold text-[#1F2A30] hover:text-black",
+                      "!inline-flex items-center gap-4 px-4 text-[10px] md:text-[14px] font-semibold text-[#1F2A30] hover:text-black",
                       isActive ? "text-black" : "",
                     ].join(" ")
                   }
@@ -225,28 +275,23 @@ export default function Navbar() {
                 </NavLink>
               );
             })}
-          </nav>
+              </nav>
+            </div>
+          </div>
 
           {/* Right actions */}
           <div className="flex items-center gap-3">
-            <button
-              type="button"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F3F4] text-[#1F2A30] hover:bg-[#E9EBEC]"
-              aria-label="Search"
-            >
-              <Search className="h-5 w-5" />
-            </button>
 
-            <button
-              type="button"
-              className="hidden rounded-2xl bg-[#1F2A30] px-7 py-3 font-semibold text-white hover:bg-black md:inline-flex"
+            <Link
+              to="/#get-in-touch"
+              className="nes-btn is-primary inline-flex px-2 py-1 text-xs font-semibold text-white md:px-7 md:py-3 md:text-sm"
             >
               Get Quote
-            </button>
+            </Link>
 
-            <button
+             <button
               type="button"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F3F4] text-[#1F2A30] hover:bg-[#E9EBEC] md:hidden"
+              className="nes-btn inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F3F4] text-[#1F2A30] hover:bg-[#E9EBEC] md:hidden"
               aria-label="Open menu"
               onClick={() => setMobileOpen(true)}
             >
@@ -255,7 +300,7 @@ export default function Navbar() {
 
             <button
               type="button"
-              className="hidden h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F3F4] text-[#1F2A30] hover:bg-[#E9EBEC] md:inline-flex"
+              className="nes-btn hidden h-12 w-12 items-center justify-center pb-4 rounded-2xl bg-[#F2F3F4] text-[#1F2A30] text-3xl hover:bg-[#E9EBEC] md:inline-flex"
               aria-label="Open side panel"
               onClick={() => setSidePanelOpen(true)}
             >
@@ -275,64 +320,82 @@ export default function Navbar() {
           />
 
           <aside className="absolute right-0 top-0 h-full w-[84%] max-w-sm bg-white shadow-xl">
-            <div className="p-4">
+            {/* Header: logo top-left, close button top-right */}
+            <div className="flex items-center justify-between p-4">
+              <img src={logo} alt="drfab" className="h-12 w-auto" />
+
               <button
                 type="button"
-                className="inline-flex h-10 w-10 items-center justify-center bg-[#1F2A30] text-white"
+                className="nes-btn is-error inline-flex h-10 w-10 items-center justify-center bg-[#1F2A30] text-white text-3xl"
                 aria-label="Close menu"
                 onClick={() => setMobileOpen(false)}
-              >
-                <X className="h-5 w-5" />
+              >X
               </button>
             </div>
 
             <div className="px-6 pb-8">
-              <div className="flex items-center gap-3 pb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1F2A30] text-white">
-                  ↗
-                </div>
-                <div className="leading-tight">
-                  <div className="text-2xl font-extrabold text-[#1F2A30]">
-                    Nexora
-                  </div>
-                  <div className="-mt-1 text-sm text-[#5C6B73]">
-                    Business Solution
-                  </div>
-                </div>
+              <div className="pb-6 text-xs text-[#5C6B73]">
+                3d modelling & printshop
               </div>
 
               <div className="divide-y divide-gray-100 border-t border-gray-100">
-                <a
-                  href="#services"
+                <Link
+                  to="/services"
+                  onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-between py-4 text-[15px] font-semibold text-[#1F2A30]"
                 >
                   Services
-                </a>
-                <a
-                  href="/projects"
+                </Link>
+                <Link
+                  to="/projects"
+                  onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-between py-4 text-[15px] font-semibold text-[#1F2A30]"
                 >
                   Projects
-                </a>
-                <a
-                  href="/blog"
+                </Link>
+                <Link
+                  to="/blog"
+                  onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-between py-4 text-[15px] font-semibold text-[#1F2A30]"
                 >
                   Blog
-                </a>
-                <a
-                  href="/contact"
+                </Link>
+                <Link
+                  to="/#get-in-touch"
+                  onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-between py-4 text-[15px] font-semibold text-[#1F2A30]"
                 >
                   Contact Us
-                </a>
+                </Link>
               </div>
 
-              <div className="mt-10 flex items-center gap-6">
-                {socialIcons.map((icon, idx) => (
-                  <SocialDot key={idx} label={icon.label} image={icon.image} />
-                ))}
-              </div>
+              <div className="flex items-center gap-4">
+               <a href="https://www.etsy.com/ca/people/tgg9bpgjs03j492z" target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={etsyIcon}
+                      alt="Etsy"
+                      className="h-8 w-8 rounded"
+                    />
+                  </a>
+                  <a href="https://www.tiktok.com/@drfab.biz" target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={tiktokIcon}
+                      alt="TikTok"
+                      className="h-10 w-20 rounded"
+                    />
+                  </a>
+                <a
+                  
+                  href="https://www.instagram.com/drfab.biz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    className={`nes-icon instagram`}
+                    aria-hidden="true"
+                  ></i>
+                </a>
+            </div>
             </div>
           </aside>
         </div>
@@ -343,14 +406,3 @@ export default function Navbar() {
   );
 }
 
-function SocialDot({ label, image }) {
-  return (
-    <div>
-      <img
-        src={image}
-        alt={label}
-        className="h-6 w-6 object-cover bg-white rounded-full"
-      />
-    </div>
-  );
-}

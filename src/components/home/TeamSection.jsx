@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import TeamCard from "./TeamCard";
-import teamMember from "../../assets/images/member.webp";
-import teamMember2 from "../../assets/images/member2.webp";
+import dan from "../../assets/images/dan.jpeg";
+import ryan from "../../assets/images/ryan.jpeg";
+import colin from "../../assets/images/colin.jpeg";
+import jeffrey from "../../assets/images/jeffrey.jpeg";
 
 
 /**
@@ -14,32 +16,32 @@ export default function TeamSection() {
   const members = useMemo(
     () => [
       {
-        slug: "beckett-hayden",
-        name: "Beckett Hayden",
-        role: "Deputy Manager",
+        slug: "dan",
+        name: "Dan",
+        role: "Operations & Fabrication",
         social: { youtube: "#", twitter: "#", instagram: "#" },
-        image: teamMember,
+        image: dan,
       },
       {
-        slug: "julian-wyat",
-        name: "Julian Wyat",
-        role: "Finance Manager",
+        slug: "ryan",
+        name: "Ryan",
+        role: "Design & Modelling",
         social: { youtube: "#", twitter: "#", instagram: "#" },
-        image: teamMember2,
+        image: ryan,
       },
       {
-        slug: "archer-graham",
-        name: "Archer Graham",
-        role: "Founder",
+        slug: "colin",
+        name: "Colin",
+        role: "Filament Printer",
         social: { youtube: "#", twitter: "#", instagram: "#" },
-        image: teamMember,
+        image: colin,
       },
       {
-        slug: "amelia-clover",
-        name: "Amelia Clover",
-        role: "Co-Founder",
+        slug: "jeffrey",
+        name: "Jeffrey",
+        role: "Resin Printer",
         social: { youtube: "#", twitter: "#", instagram: "#" },
-        image: teamMember2,
+        image: jeffrey,
       },
     ],
     [],
@@ -85,11 +87,11 @@ export default function TeamSection() {
           </div>
 
           <span className="inline-flex items-center justify-center rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-semibold tracking-[0.22em] text-[#1F2A30]">
-            EXPERT MEMBERS
+            MEET THE TEAM
           </span>
 
           <h2 className="mt-4 text-4xl font-extrabold text-[#1F2A30] sm:text-5xl">
-            Professionals Team
+            Who&apos;s Behind drfab
           </h2>
         </div>
 

@@ -8,10 +8,10 @@ import icon from "../../assets/icons/planning.png";
  */
 export default function StatsStrip() {
   const stats = [
-    { value: "199+", label: "SUCCESSFUL PROJECTS", image: icon },
-    { value: "300+", label: "MEDIA ACTIVITIES", image: icon },
-    { value: "699+", label: "SKILLED EXPERTS", image: icon },
-    { value: "120+", label: "HAPPY CLIENTS", image: icon },
+    { value: "1", label: "MINIMUM ORDER SIZE", image: icon },
+    { value: "24HR", label: "QUOTE TURNAROUND", image: icon },
+    { value: "2", label: "IN-HOUSE SPECIALISTS", image: icon },
+    { value: "500+", label: "PARTS PRODUCED", image: icon },
   ];
 
   return (
