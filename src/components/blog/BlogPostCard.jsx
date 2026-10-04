@@ -20,7 +20,7 @@ export default function BlogPostCard({ post }) {
 
         {/* Content */}
         <div className="px-6 pb-8 pt-7">
-          <h3 className="text-[22px] font-extrabold leading-snug text-[#1F2A30]">
+          <h3 className="text-[16px] sm:text-[22px] font-extrabold leading-snug text-[#1F2A30]">
             {post.title}
           </h3>
 

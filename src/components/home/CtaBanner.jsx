@@ -26,7 +26,7 @@ export default function CtaBanner() {
         {/* Content (centered vertically) */}
         <div className="relative">
           <div className="mx-auto flex min-h-45 max-w-7xl flex-col items-start justify-center gap-6 px-4 py-10 sm:px-6 md:min-h-72 md:flex-row md:items-center md:justify-between lg:px-8">
-            <h3 className="max-w-2xl text-3xl font-extrabold leading-tight text-white sm:text-4xl">
+            <h3 className="max-w-2xl text-xl font-extrabold leading-tight text-white sm:text-4xl">
               Got an idea? Let&apos;s make it
               <br className="hidden sm:block" />
               real — no minimum order required

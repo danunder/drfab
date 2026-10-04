@@ -1,6 +1,6 @@
 export default function BlogHero() {
   return (
-    <section className="relative overflow-hidden bg-[#F4F6F8] pt-20">
+    <section className="relative overflow-hidden bg-[#F4F6F8] md:pt-20">
       {/* faint watermark */}
       <div className="pointer-events-none absolute left-1/2 -top-10 hidden -translate-x-1/2 select-none text-[130px] font-extrabold tracking-tight text-black/5 lg:block w-6xl mx-auto text-center">
         Latest Post
@@ -13,7 +13,7 @@ export default function BlogHero() {
 
       <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold text-[#1F2A30] sm:text-5xl">
+          <h1 className="text-2xl font-extrabold text-[#1F2A30] sm:text-4xl lg:text-5xl">
             Latest Posts
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[#1F2A30]/60">

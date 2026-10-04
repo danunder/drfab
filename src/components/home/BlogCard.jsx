@@ -17,7 +17,7 @@ export default function BlogCard({ post }) {
 
       {/* Clickable content (title + divider + image) */}
       <Link to={`/blog/${post.slug}`} className="mt-4 block">
-        <h3 className="text-2xl font-extrabold leading-snug text-[#1F2A30]">
+        <h3 className="text-lg sm:text-2xl font-extrabold leading-snug text-[#1F2A30]">
           {post.title}
         </h3>
 

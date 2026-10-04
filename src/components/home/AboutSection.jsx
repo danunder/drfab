@@ -19,19 +19,19 @@ export default function AboutSection() {
             <img
               src={hero2}
               alt="drfab workshop"
-              className="h-105 w-full sm:h-120 object-cover"
+              className="h-80 w-full sm:h-120 object-cover"
             />
           </div>
 
           {/* Experience badge
           <div className="absolute left-0 top-24 -translate-x-6 rounded-2xl bg-[#1F2A30] px-8 py-8 text-white shadow-lg sm:-translate-x-10">
-            <div className="text-5xl font-extrabold leading-none">25+</div>
+            <div className="text-3xl sm:text-3xl sm:text-5xl font-extrabold leading-none">25+</div>
             <div className="mt-4 text-sm font-semibold">Year of experience</div>
           </div> */}
 
           {/* Small bottom image placeholder */}
-          <div className="absolute bottom-10 right-6 w-60 overflow-hidden rounded-2xl border-8 border-white bg-gray-200 shadow-lg sm:right-10 sm:w-70">
-            <img src={hero1} alt="" className="h-40 w-full sm:h-45" />
+          <div className="absolute bottom-10 right-6 w-44 overflow-hidden rounded-2xl border-4 sm:border-8 border-white bg-gray-200 shadow-lg sm:right-10 sm:w-70">
+            <img src={hero1} alt="" className="h-28 w-full sm:h-45" />
           </div>
         </div>
 
@@ -46,7 +46,7 @@ export default function AboutSection() {
             WHAT WE DO
           </p>
 
-          <h2 className="mt-4 text-3xl font-extrabold leading-[1.1] text-[#1F2A30] sm:text-4xl">
+          <h2 className="mt-4 text-xl font-extrabold leading-[1.1] text-[#1F2A30] sm:text-4xl">
             Prototyping
             <br className="hidden sm:block" />
             to Production

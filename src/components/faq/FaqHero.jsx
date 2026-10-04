@@ -15,14 +15,14 @@ export default function FaqHero() {
 
       {/* Watermark text (faint "FAQ") */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="select-none text-[72px] font-extrabold tracking-wide -mt-40 text-white/20 sm:text-[92px] lg:text-[120px]">
+        <div className="select-none text-[48px] font-extrabold tracking-wide -mt-40 text-white/20 sm:text-[92px] lg:text-[120px]">
           FAQ
         </div>
       </div>
 
       {/* Center title */}
       <div className="relative z-10 flex h-full items-center justify-center px-4">
-        <h1 className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
+        <h1 className="text-xl font-semibold text-white sm:text-4xl lg:text-5xl">
           Questions
         </h1>
       </div>

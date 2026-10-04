@@ -24,7 +24,7 @@ export default function BusinessGlobalSection() {
             HOW IT WORKS
           </p>
 
-          <h2 className="mt-4 text-4xl font-semibold leading-[1.08] text-[#1F2A30] sm:text-5xl">
+          <h2 className="mt-4 text-2xl font-semibold leading-[1.08] text-[#1F2A30] sm:text-4xl lg:text-5xl">
             Three steps
             <br className="hidden sm:block" />
             to real.
@@ -73,12 +73,12 @@ export default function BusinessGlobalSection() {
             <img
               src={image1}
               alt="Business Global Section"
-              className="h-140 w-full lg:h-140 object-cover"
+              className="h-80 w-full sm:h-140 object-cover"
             />
           </div>
 
           {/* Small overlapping image placeholder */}
-          <div className="absolute left-10 top-50 lg:-left-30 lg:top-24 w-65 overflow-hidden rounded-3xl border-10 border-white bg-gray-200 shadow-lg sm:w-75">
+          <div className="absolute left-10 top-50 lg:-left-30 lg:top-24 w-44 overflow-hidden rounded-3xl border-4 sm:border-10 border-white bg-gray-200 shadow-lg sm:w-75">
             {/* Replace with your image */}
             <img
               src={image2}

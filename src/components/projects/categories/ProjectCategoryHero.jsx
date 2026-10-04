@@ -13,7 +13,7 @@ export default function ProjectCategoryHero({ image, title, desc }) {
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 text-white">
         <div className="max-w-xl">
-          <h1 className="text-3xl font-extrabold sm:text-4xl">{title}</h1>
+          <h1 className="text-xl font-extrabold sm:text-4xl">{title}</h1>
           <p className="mt-4 text-sm leading-6 text-white/80">{desc}</p>
         </div>
       </div>

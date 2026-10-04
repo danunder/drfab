@@ -39,7 +39,7 @@ export default function RequestQuote() {
               GET IN TOUCH
             </p>
 
-            <h2 className="mt-4 text-4xl font-semibold text-[#1F2A30] sm:text-5xl">
+            <h2 className="mt-4 text-2xl font-semibold text-[#1F2A30] sm:text-4xl lg:text-5xl">
               Let&apos;s make something
             </h2>
 

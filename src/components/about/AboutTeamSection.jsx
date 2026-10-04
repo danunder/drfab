@@ -38,7 +38,7 @@ export default function AboutTeamSection() {
           <p className="text-sm font-semibold tracking-[0.25em] text-[#1F2A30]">
             ABOUT / THE TEAM
           </p>
-          <h2 className="mt-4 text-4xl font-extrabold text-[#1F2A30] sm:text-5xl">
+          <h2 className="mt-4 text-2xl font-extrabold text-[#1F2A30] sm:text-4xl lg:text-5xl">
             Who&apos;s Behind drfab
           </h2>
         </div>
@@ -49,7 +49,7 @@ export default function AboutTeamSection() {
               <img
                 src={member.image}
                 alt={member.name}
-                className="h-56 w-56 rounded-2xl object-cover"
+                className="h-40 w-40 sm:h-56 sm:w-56 rounded-2xl object-cover"
               />
 
               <h3 className="mt-6 text-2xl font-extrabold text-[#1F2A30]">

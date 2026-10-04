@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import SidePanel from "./SidePanel";
 import ServiceDropdown from "./ServiceDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
-import { Mail, Clock, Search, Menu, X, ChevronDown } from "lucide-react";
+import {Menu, ChevronDown } from "lucide-react";
 import logo from "../../assets/images/drfablogo.png";
 import etsyIcon from "../../assets/social-icons/etsy.png";
 import tiktokIcon from "../../assets/social-icons/tiktok.png";
@@ -30,12 +30,6 @@ export default function Navbar() {
     ],
     [],
   );
-
-  // ✅ NEW: refs + state to pin ONLY the main navbar after top bar scrolls away
-  const topBarRef = useRef(null);
-  const mainNavRef = useRef(null);
-  const [pinMainNav, setPinMainNav] = useState(false);
-  const [mainNavHeight, setMainNavHeight] = useState(0);
 
   // ESC closes
   useEffect(() => {
@@ -85,95 +79,21 @@ export default function Navbar() {
     }, 140);
   };
 
-  // ✅ NEW: pin main nav after scrolling past top bar
-  useEffect(() => {
-    const measure = () => {
-      const h = mainNavRef.current?.offsetHeight || 0;
-      setMainNavHeight(h);
-    };
-
-    const onScroll = () => {
-      const topBarH = topBarRef.current?.offsetHeight || 0;
-      setPinMainNav(window.scrollY > topBarH);
-    };
-
-    measure();
-    onScroll();
-
-    window.addEventListener("resize", measure);
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("resize", measure);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
 
   return (
     <header className="w-full">
-      {/* Top utility bar (desktop) */}
-      <div
-        ref={topBarRef}
-        className="hidden w-full bg-[#1F2A30] text-white md:block"
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-          <div className="flex items-center gap-8 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="grid h-6 w-6 place-items-center rounded bg-white/10">
-                <i className="nes-icon gmail is-small" aria-hidden="true"></i>
-              </span>
-              <span><a href="mailto:hello@drfab.biz">hello@drfab.biz</a></span>
-            </div>
-          </div>
+      {/* Reserves space for the fixed mobile navbar */}
+      <div className="h-[81px] md:hidden" aria-hidden="true" />
 
-          <div className="flex items-center gap-6 text-sm">
-            <nav className="flex items-center gap-6">
-              <Link className="opacity-90 hover:opacity-100" to="/faq">
-                Faq
-              </Link>
-              <Link className="opacity-90 hover:opacity-100" to="/#get-in-touch">
-                Contact
-              </Link>
-            </nav>
-
-            <span className="h-4 w-px bg-white/20" />
-
-            <div className="flex items-center">
-                  <a href="https://www.etsy.com/ca/people/tgg9bpgjs03j492z" target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={etsyIcon}
-                      alt="Etsy"
-                      className="h-8 w-8 rounded"
-                    />
-                  </a>
-                  <a href="https://www.tiktok.com/@drfab.biz" target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={tiktokIcon}
-                      alt="TikTok"
-                      className="h-10 w-20 rounded"
-                    />
-                  </a>
-                <a
-                  href="https://www.instagram.com/drfab.biz/" target="_blank" rel="noopener noreferrer">
-                  <i
-                    className={`nes-icon instagram`}
-                    aria-hidden="true"
-                  ></i>
-                </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ✅ Spacer only when main nav is pinned (prevents jump) */}
-      {pinMainNav ? <div style={{ height: mainNavHeight }} /> : null}
 
       {/* Main navbar */}
       <div
-        ref={mainNavRef}
         className={[
-          "w-full bg-white border-b border-gray-400 transition-all",
-          pinMainNav ? "fixed top-0 left-0 right-0 z-50" : "",
+          "w-full bg-white border-b border-gray-400",
+          // Mobile: Always fixed at top
+          "fixed top-0 left-0 right-0 z-50", 
+          // Desktop: standard flow unless JavaScript pins it
+          "md:relative md:top-auto md:left-auto md:right-auto md:z-auto", 
         ].join(" ")}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -183,23 +103,23 @@ export default function Navbar() {
               <img
                 src={logo}
                 alt="drfab"
-                className="h-24 md:h-30 w-auto rotate-[5deg]"
+                className="h-12 md:h-20 xl:h-30 w-auto rotate-[5deg]"
               />
             </NavLink>
 
-            <div className="ml-6">
-              <div className="text-2xl text-[#5C6B73]">
+            <div className="md:ml-2 xl:ml-6">
+              <div className="text-xs md:text-sm lg:text-lg xl:text-2xl text-[#5C6B73]">
                 3d modelling & printshop
               </div>
 
               {/* Desktop nav */}
-              <nav className="relative mt-4 hidden md:grid grid-flow-col auto-cols-max items-center">
+              <nav className="relative mt-2 xl:mt-4 -ml-2 lg:-ml-4 hidden md:grid grid-flow-col auto-cols-max items-center">
                 {navItems.map((item) => {
               if (item.label === "Services") {
                 return (
                   <div
                     key={item.label}
-                    className="relative md:inline-block px-4"
+                    className="relative md:inline-block px-2 lg:px-4"
                     onMouseEnter={openServices}
                     onMouseLeave={scheduleCloseServices}
                   >
@@ -207,7 +127,7 @@ export default function Navbar() {
                       to={item.to}
                       className={({ isActive }) =>
                         [
-                          "!inline-flex items-center gap-2 text-[10px] md:text-[14px] font-semibold text-[#1F2A30] hover:text-black",
+                          "!inline-flex items-center gap-2 text-[10px] lg:text-[14px] font-semibold text-[#1F2A30] hover:text-black",
                           isActive ? "text-black" : "",
                         ].join(" ")
                       }
@@ -230,7 +150,7 @@ export default function Navbar() {
                 return (
                   <div
                     key={item.label}
-                    className="relative md:inline-block px-4"
+                    className="relative md:inline-block px-2 lg:px-4"
                     onMouseEnter={openProjects}
                     onMouseLeave={scheduleCloseProjects}
                   >
@@ -238,7 +158,7 @@ export default function Navbar() {
                       to={item.to}
                       className={({ isActive }) =>
                         [
-                          "!inline-flex items-center gap-2 text-[10px] md:text-[14px] font-semibold text-[#1F2A30] hover:text-black",
+                          "!inline-flex items-center gap-2 text-[10px] lg:text-[14px] font-semibold text-[#1F2A30] hover:text-black",
                           isActive ? "text-black" : "",
                         ].join(" ")
                       }
@@ -263,7 +183,7 @@ export default function Navbar() {
                   to={item.to}
                   className={({ isActive }) =>
                     [
-                      "!inline-flex items-center gap-4 px-4 text-[10px] md:text-[14px] font-semibold text-[#1F2A30] hover:text-black",
+                      "!inline-flex items-center gap-4 px-2 lg:px-4 text-[10px] lg:text-[14px] font-semibold text-[#1F2A30] hover:text-black",
                       isActive ? "text-black" : "",
                     ].join(" ")
                   }
@@ -284,14 +204,14 @@ export default function Navbar() {
 
             <Link
               to="/#get-in-touch"
-              className="nes-btn is-primary inline-flex px-2 py-1 text-xs font-semibold text-white md:px-7 md:py-3 md:text-sm"
+              className="hidden xl:inline-flex nes-btn is-primary px-2 py-1 text-xs font-semibold text-white md:px-7 md:py-3 md:text-sm"
             >
               Get Quote
             </Link>
 
              <button
               type="button"
-              className="nes-btn inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F3F4] text-[#1F2A30] hover:bg-[#E9EBEC] md:hidden"
+              className="nes-btn inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#F2F3F4] text-[#1F2A30] hover:bg-[#E9EBEC] md:hidden"
               aria-label="Open menu"
               onClick={() => setMobileOpen(true)}
             >

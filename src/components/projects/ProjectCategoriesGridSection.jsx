@@ -6,7 +6,7 @@ export default function ProjectCategoriesGridSection() {
     <section className="bg-white py-14">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <p className="text-center my-3">Browse By Category</p>
-        <h2 className="text-center text-3xl font-bold tracking-tight text-[#1F2A30] sm:text-4xl">
+        <h2 className="text-center text-xl font-bold tracking-tight text-[#1F2A30] sm:text-4xl">
           What We Build
         </h2>
 

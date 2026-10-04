@@ -15,7 +15,7 @@ export default function NewsletterCta() {
           {/* Left text */}
           <div>
             <p className="text-sm text-black/60">Subscribe Newsletter</p>
-            <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-[#1F2A30] sm:text-5xl">
+            <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-[#1F2A30] sm:text-4xl lg:text-5xl">
               Stay Updated with <br className="hidden sm:block" />
               the Latest News!
             </h2>

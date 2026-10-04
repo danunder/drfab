@@ -30,7 +30,7 @@ export default function FooterArea() {
 
             {/* CONTACT (right) */}
             <div className="p-5 text-[#1F2A30]">
-              <h3 className="text-3xl font-extrabold">Contact Us</h3>
+              <h3 className="text-xl sm:text-3xl font-extrabold">Contact Us</h3>
 
               {/* underline */}
               <div className="mt-4 flex items-center gap-2 px-5">

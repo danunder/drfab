@@ -50,7 +50,7 @@ export default function SidePanel({ open, onClose }) {
       <aside className="absolute right-0 top-0 h-full w-[420px] max-w-[92vw] bg-white shadow-xl">
         {/* Header: logo top-left, close button top-right */}
         <div className="flex items-center justify-between p-6">
-          <img src={logo} alt="drfab" className="h-16 w-auto origin-left rotate-[5deg] scale-170" />
+          <img src={logo} alt="drfab" className="h-16 w-auto origin-left rotate-[5deg] scale-100 sm:scale-170" />
 
           <button
             type="button"

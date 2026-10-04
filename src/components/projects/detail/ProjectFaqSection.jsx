@@ -77,7 +77,7 @@ export default function ProjectFaqSection({ faqs = [] }) {
 
                       {/* Text */}
                       <div className="pt-1">
-                        <h4 className="text-[28px] font-extrabold leading-tight text-[#1F2A30]">
+                        <h4 className="text-[18px] sm:text-[28px] font-extrabold leading-tight text-[#1F2A30]">
                           {contentTitle}
                         </h4>
 

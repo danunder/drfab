@@ -17,7 +17,7 @@ export default function ServiceCard({ title, desc, icon, active }) {
       <div className="flex items-start gap-6">
         {/* Icon placeholder */}
         {/* <div className="h-16 w-16 shrink-0 rounded-xl bg-black" /> */}
-        <img src={icon} alt="ic" className="h-32 w-32 shrink-0"/>
+        <img src={icon} alt="ic" className="h-20 w-20 sm:h-32 sm:w-32 shrink-0"/>
 
         <div>
           <h3 className="text-xl font-extrabold text-[#1F2A30]">{title}</h3>

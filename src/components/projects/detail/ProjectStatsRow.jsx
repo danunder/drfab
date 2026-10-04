@@ -25,7 +25,7 @@ export default function ProjectStatsRow({ stats = [] }) {
                 </div>
 
                 {/* Value */}
-                <p className="mt-5 text-4xl font-extrabold tracking-tight text-[#1F2A30]">
+                <p className="mt-5 text-2xl sm:text-4xl font-extrabold tracking-tight text-[#1F2A30]">
                   {s.value}
                 </p>
 

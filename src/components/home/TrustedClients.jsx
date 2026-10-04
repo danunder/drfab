@@ -46,7 +46,7 @@ export default function TrustedClients() {
               {/* Logo mark placeholder */}
               {/* <span className="inline-block h-6 w-6 rounded bg-black/10" />
               <span>{name}</span> */}
-              <img src={logo} alt="Client Logo" className="h-20 w-30 object-contain" />
+              <img src={logo} alt="Client Logo" className="h-14 w-20 sm:h-20 sm:w-30 object-contain" />
             </div>
           ))}
         </div>

@@ -79,7 +79,7 @@ export default function ProjectsSection() {
               RECENT WORK
             </p>
 
-            <h2 className="mt-4 text-4xl font-extrabold text-[#1F2A30] sm:text-5xl">
+            <h2 className="mt-4 text-2xl font-extrabold text-[#1F2A30] sm:text-4xl lg:text-5xl">
               Recent Work
             </h2>
           </div>
